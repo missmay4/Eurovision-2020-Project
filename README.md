@@ -18,7 +18,7 @@ Aquí se va a desarrollar una appliación web, dónde la mayor funcionalidad ser
 
 ### Participants
   #### Host Country:   
-  - [x] Netherlands (_Grow - Jeangu Macrooy)
+  - [x] Netherlands (_Grow - Jeangu Macrooy_)
   #### Big Five:
   - [x] Great Britain (_My Last Breath - James Newman_)
   - [x] Spain (_Universo - Blas Cantó_)

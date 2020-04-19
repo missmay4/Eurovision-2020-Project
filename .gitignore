@@ -1,5 +1,6 @@
 \.DS_Store
 src/API/target
+src/API/bin
 .classpath
 .project
 .settings

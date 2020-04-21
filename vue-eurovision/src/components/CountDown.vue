@@ -1,12 +1,12 @@
 <template>
   <div class="col-sm-12 col-md-12 col lg-12">
     <div class="alert alert-primary" role="alert">
-      <h1 class="display-4 alert-heading">
+      <h1 class="alert-heading">
         {{name}}
-        {{date.getDate() + ' / ' + (date.getMonth() + 1)}}
+        {{date.toLocaleDateString('default', {month: 'long', day: 'numeric'})}}
       </h1>
-      <h1 class="alert-heading">{{days}}d {{hours}}h {{minutes}}m {{seconds}}s</h1>
-      <hr>
+      <h1>{{days}}d {{hours}}h {{minutes}}m {{seconds}}s</h1>
+      <hr />
       <router-link :to="'/listCountryVote#' + link">
         <a
           class="btn btn-light btn-lg btn-block"
@@ -15,18 +15,6 @@
         >Vota!</a>
       </router-link>
     </div>
-
-    <!-- <div class="alert alert-primary" role="alert">
-      <p>
-        Cuenta atrás para la
-        <b>{{name}}</b>
-        {{date.getDate() + ' / ' + (date.getMonth() + 1)}}
-      </p>
-      <p>{{days}}d {{hours}}h {{minutes}}m {{seconds}}s</p>
-      <router-link :to="'/listCountryVote#' + link">
-        <a class="btn btn-light" v-bind:class="{disabled: this.distance > 0}" role="button">Vota!</a>
-      </router-link>
-    </div>-->
   </div>
 </template>
 

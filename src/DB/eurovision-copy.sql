@@ -20,6 +20,7 @@ create table participant (
 	foreign key (country_id) references country(id)
 )
 
+
 -- Gala Table
 create type gala_type as enum ('Semifinal', 'Final')
 
@@ -27,7 +28,9 @@ create table gala (
 	id serial primary key,
 	type gala_type not null, 
 	date date not null
+	
 )
+
 
 -- galaParticipant Table (relation)
 create table galaParticipant (
@@ -35,17 +38,22 @@ create table galaParticipant (
 	gala_id serial, 
 	participant_id serial, 
 	points int,
-	performanceOrder int,
 
 	foreign key (gala_id) references gala(id),
 	foreign key (participant_id) references participant(id)
+	
 )
+
+alter table galaParticipant add column performanceOrder int
 
 -- User table 
 create table user_ (
 	id serial primary key, 
-	name varchar(20) unique
+	name varchar(20)
+
 )
+
+alter table user_ add constraint unique_name unique (name)
 
 -- Vote table
 create table vote (
@@ -59,5 +67,6 @@ create table vote (
 	foreign key (participant_id) references participant(id),
 	foreign key (user_id) references user_(id), 
 	foreign key (gala_id) references gala(id)
+	
 )
 

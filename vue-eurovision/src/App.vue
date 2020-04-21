@@ -42,9 +42,9 @@
     </div>
 
     <footer>
-      <p>© 2020, Mayte & Andrea</p>
+      <p>© 2020, Mayte &amp; Andrea</p>
       <p>
-        Images & Data obtained in
+        Images &amp; Data obtained in
         <a
           href="https://es.wikipedia.org/wiki/Festival_de_la_Canci%C3%B3n_de_Eurovisi%C3%B3n_2020"
         >Wikipedia</a>,

@@ -1,6 +1,6 @@
 # Vote! Eurovision 2020 :eu: :netherlands:
 
-Leer en español
+[Read in English](https://github.com/missmay4/Eurovision-2020-Project/blob/master/README.md)
 
 Hola! Este es el proyecto final y personal para el Curso FP Desarrollo de Apliaciones Web del I.E.S. Clara del Rey, en el que se mostrarán todos los datos relativos a la 65ª edición de Eurovisión.
 

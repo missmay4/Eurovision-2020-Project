@@ -112,7 +112,7 @@ public class VoteDao {
 		// Database connect
 		// Conectamos con la base de datos
 		try {
-			connection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/eurovision2020",
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020",
 			        "postgres", "1234");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

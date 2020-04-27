@@ -26,8 +26,9 @@ public class UserController {
 	private UserService userService;
 	@Autowired
 	private VoteService voteService;
-
-    @CrossOrigin(origins = "http://localhost:8000")
+	
+	// (origins = "http://localhost:8000")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/user/")
 	public Object getUsers() {
 		try {
@@ -46,7 +47,8 @@ public class UserController {
 
 	}
 	
-    @CrossOrigin(origins = "http://localhost:8000")
+ // (origins = "http://localhost:8000")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/user/")
 	public Object createUser(@RequestParam(value = "name", required = true) String name) {
 		try {

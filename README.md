@@ -6,7 +6,7 @@ Hello! This is a personal and final project made for Web Development FP Course i
 
 Due to the CO-VID 19 crisis affecting the whole of Europe, this edition has been canceled, so the data that may be known for said celebration will be used in a test data mode for a simulation of said celebration.
 
-Here we'll develop a web application, where most of the function will be vote for your favorites, as well as find the data relative to the participants of each country and more...
+Here we'll develop a web application, where most of the function will be **vote** for your favorites, as well as find the data relative to the participants of each country and more...
 
 ## Tecnologías usadas: 
 ### Client: 

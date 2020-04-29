@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <button
         type="button"
-        class="btn btn-primary btn-block"
+        class="btn btn-danger btn-block"
         @click="showModal"
         :disabled="disabled"
       >Vota</button>

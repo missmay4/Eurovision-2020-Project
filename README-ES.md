@@ -2,13 +2,29 @@
 
 [Read in English](https://github.com/missmay4/Eurovision-2020-Project/blob/master/README.md)
 
+# Descripción del proyecto: 
 Hola! Este es el proyecto final y personal para el Curso FP Desarrollo de Apliaciones Web del I.E.S. Clara del Rey, en el que se mostrarán todos los datos relativos a la 65ª edición de Eurovisión.
 
 Debido a la crisis del CO-VID 19 que afecta a toda Europa, esta edicion ha sido cancelada, por lo que los datos que inicialmente se conocian para dicha celebración se usarán a modo de datos de prueba para un simulacro de dicha celebración.
 
 Aquí se va a desarrollar una appliación web, dónde la mayor funcionalidad sera **votar** por tus favoritos, así cómo encontrar los datos relativos a los participantes de cada país y más...
 
+## Tecnologías usadas: 
+### Parte cliente: 
+* [Vue JS](https://vuejs.org/)
+### Parte servidor: 
+* [Spring](https://spring.io/projects/spring-framework)
+* [Apache Maven](https://maven.apache.org/)
+* [PostgreSQL](https://www.postgresql.org/)
+### Parte Diseño de interfaces web
+* CSS
+* [Bootstrap](https://getbootstrap.com/)
+### Parte Despliegue de aplicaciones web
+* Git & Github
+* [Docker](https://www.docker.com/)
+
 ![Eurovision2020](eurovision-2020-rotterdam.svg)
+
 
 ## Final _16/05/2020_
 

@@ -83,10 +83,16 @@ main img {
   margin-left: 3%;
 }
 
+.margin {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 /* main div:hover img, main div:focus img {
   filter: grayscale(.3) blur(2px) brightness(.5);
 } */
-@supports (display:grid) {
+
+@supports (display: grid) {
 
   /* Media query */
   main {
@@ -166,8 +172,9 @@ main img {
 }
 
 /* Footer */
+
 footer {
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: var(--spacer);
   display: flex;
   flex-direction: column;
@@ -175,7 +182,7 @@ footer {
 }
 
 footer p {
-  margin: .5em;
+  margin: 0.5em;
 }
 
 /* Prueba tabla */
@@ -185,6 +192,7 @@ table {
   width: 100%;
 }
 
+/* 
 td,
 th {
   border: 1px solid #000000;
@@ -193,5 +201,5 @@ th {
 }
 
 th {
-  background-color: #7590DA;
-}
+  background-color: #7590da;
+} */

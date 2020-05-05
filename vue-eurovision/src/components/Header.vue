@@ -17,7 +17,6 @@
         <!-- <li class="nav-item">
             <router-link to="/listCountryVote">Votaciones</router-link>
         </li>-->
-
         <li class="nav-item">
           <router-link to="/votes">Votes</router-link>
         </li>
@@ -36,11 +35,11 @@
           <i class="fa fa-spotify fa-lg" aria-hidden="true"></i>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a href="https://twitter.com/deathscythe_4">
           <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
         </a>
-      </li>
+      </li>-->
     </ul>
   </header>
 </template>

@@ -96,73 +96,73 @@ insert into gala (type, date) values
 	('Final', '2020-05-16')
 	
 -- galaParticipant Insert 
-insert into galaparticipant (gala_id, participant_id) values
-	(3, 17), -- France
-	(3, 14), -- Spain
-	(3, 30), -- Netherlands
-	(3, 2), -- Germany
-	(3, 23), -- Italy
-	(3, 33) -- United Kingdom
+insert into galaparticipant (gala_id, participant_id, performanceorder) values
+	(3, 17, 19), -- France
+	(3, 14, 12), -- Spain
+	(3, 30, 10), -- Netherlands
+	(3, 2, 26), -- Germany
+	(3, 23, 16), -- Italy
+	(3, 33, 9) -- United Kingdom
 	
-insert into galaparticipant (gala_id, participant_id) values	
-	(1, 26), -- Macedonia
-	(1, 8), -- Belarus
-	(1, 25), -- Lithuania
-	(1, 39), -- Sweden
-	(1, 13), -- Slovenia
-	(1, 4), -- Australia
-	(1, 20), -- Ireland
-	(1, 36), -- Russia 
-	(1, 29), -- Norway
-	(1, 10), -- Cyprus
-	(1, 11), -- Croatia
-	(1, 6), -- Azerbaijan
-	(1, 27), -- Malta
-	(1, 22), -- Israel
-	(1, 41), -- Ukraine
-	(1, 35), -- Romania
-	(1, 7), -- Belgium
-	(2, 5), -- Austria
-	(2, 28), -- Moldova
-	(2, 31), -- Poland
-	(2, 37), -- San Marino 
-	(2, 38), -- Serbia
-	(2, 21), -- Iceland
-	(2, 34), -- Checz Republique
-	(2, 19), -- Greece
-	(2, 15), -- Estonia
-	(2, 12), -- Denmark
-	(2, 9), -- Bulgaria
-	(2, 40), -- Switzerland
-	(2, 16), -- Finland
-	(2, 3), -- Armenia
-	(2, 24), -- Latvia
-	(2, 18), -- Georgia
-	(2, 32), -- Portugal
-	(2, 1) -- Albania
+insert into galaparticipant (gala_id, participant_id, performanceorder) values	
+	(1, 26, 1), -- Macedonia
+	(1, 8, 2), -- Belarus
+	(1, 25, 3), -- Lithuania
+	(1, 39, 4), -- Sweden
+	(1, 13, 5), -- Slovenia
+	(1, 4, 6), -- Australia
+	(1, 20, 7), -- Ireland
+	(1, 36, 8), -- Russia 
+	(1, 29, 9), -- Norway
+	(1, 10, 10), -- Cyprus
+	(1, 11, 11), -- Croatia
+	(1, 6, 12), -- Azerbaijan
+	(1, 27, 13), -- Malta
+	(1, 22, 14), -- Israel
+	(1, 41, 15), -- Ukraine
+	(1, 35, 16), -- Romania
+	(1, 7, 17), -- Belgium
+	(2, 5, 1), -- Austria
+	(2, 28, 2), -- Moldova
+	(2, 31, 3), -- Poland
+	(2, 37, 4), -- San Marino 
+	(2, 38, 5), -- Serbia
+	(2, 21, 6), -- Iceland
+	(2, 34, 7), -- Checz Republique
+	(2, 19, 8), -- Greece
+	(2, 15, 9), -- Estonia
+	(2, 12, 10), -- Denmark
+	(2, 9, 11), -- Bulgaria
+	(2, 40, 12), -- Switzerland
+	(2, 16, 13), -- Finland
+	(2, 3, 14), -- Armenia
+	(2, 24, 15), -- Latvia
+	(2, 18, 16), -- Georgia
+	(2, 32, 17), -- Portugal
+	(2, 1, 18) -- Albania
 	
-insert into galaparticipant (gala_id, participant_id) values -- ganadores 1st semifinal
-	(3, 4), -- Australia
-	(3, 20), -- Ireland
-	(3, 36), -- Russia 
-	(3, 6), -- Azerbaijan
-	(3, 41), -- Ukraine
-	(3, 39), -- Sweden
-	(3, 26), -- Macedonia
-	(3, 8), -- Belarus
-	(3, 29), -- Norway
-	(3, 10) -- Cyprus
+insert into galaparticipant (gala_id, participant_id, performanceorder) values -- ganadores 1st semifinal
+	(3, 29, 21), -- Norway
+	(3, 39, 15), -- Sweden
+	(3, 25, 2), -- Lithuania
+	(3, 36, 8), -- Russia 
+	(3, 7, 5), -- Belgium
+	(3, 6, 4), -- Azerbaijan
+	(3, 20, 1), -- Ireland
+	(3, 41, 11), -- Ukraine
+	(3, 35, 20), -- Romania
+	(3, 10, 3) -- Cyprus
 	
-insert into galaparticipant (gala_id, participant_id) values -- ganadores 2st semifinal 
-	(3, 37), -- San Marino 
-	(3, 38), -- Serbia
-	(3, 21), -- Iceland
-	(3, 34), -- Checz Republique
-	(3, 12), -- Denmark
-	(3, 5), -- Austria
-	(3, 24), -- Latvia
-	(3, 19), -- Greece
-	(3, 3), -- Armenia
-	(3, 1) -- Albania
+insert into galaparticipant (gala_id, participant_id, performanceorder) values -- ganadores 2st semifinal 
+	(3, 34, 25), -- Checz Republique
+	(3, 1, 6), -- Albania
+	(3, 12, 22), -- Denmark
+	(3, 38, 7), -- Serbia
+	(3, 24, 23), -- Latvia
+	(3, 21, 13), -- Iceland
+	(2, 40, 14), -- Switzerland
+	(3, 5, 17), -- Austria
+	(3, 3, 18), -- Armenia
+	(3, 37, 24) -- San Marino 
 	
 

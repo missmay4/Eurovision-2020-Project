@@ -17,18 +17,19 @@
                 <input
                   type="name"
                   class="marg"
+                  required
                   v-bind:class="{'form-control': true, 'is-invalid': !valido}"
                   placeholder="Tu nombre"
                   v-model="name"
-                >
+                />
                 <div class="invalid-feedback">El usuario ya existe</div>
               </div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button @click="vote()" class="btn btn-primary">A votar!</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+          <button @click="vote()" class="btn btn-primary" data-dismiss="modal">A votar!</button>
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button> -->
         </div>
       </div>
     </div>

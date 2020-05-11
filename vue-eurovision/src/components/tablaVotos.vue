@@ -5,13 +5,14 @@
       <thead>
         <tr>
           <th scope="col" class="nombre">Nombre</th>
+          <th scope="col">Gala</th>
           <th scope="col">Opcion 1</th>
           <th scope="col">Opcion 2</th>
           <th scope="col">Opcion 3</th>
         </tr>
       </thead>
       <tbody>
-        <FinalVotes v-for=" usuario in usuarios" :usuario="usuario"/>
+        <FinalVotes v-for=" usuario in usuarios" :usuario="usuario" />
       </tbody>
     </table>
   </div>

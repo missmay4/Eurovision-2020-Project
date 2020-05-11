@@ -1,12 +1,13 @@
 <template>
   <tr>
     <th scope="row" class="nombreUser">{{usuario.name}}</th>
+    <th scope="row">{{usuario.votos[0].participant.gala.gala_id}}</th>
     <th scope="row">
       <img
         class="flags"
         :src="loadImage('EuroFlags/Euro' + usuario.votos[0].participant.country.code + '.png')"
         :alt="'Euro' + usuario.votos[0].participant.country.code"
-      >
+      />
       <p class="nombrePais">{{usuario.votos[0].participant.country.name}}</p>
     </th>
     <th scope="row">
@@ -14,7 +15,7 @@
         class="flags"
         :src="loadImage('EuroFlags/Euro' + usuario.votos[1].participant.country.code + '.png')"
         :alt="'Euro' + usuario.votos[1].participant.country.code"
-      >
+      />
       <p class="nombrePais">{{usuario.votos[1].participant.country.name}}</p>
     </th>
     <th scope="row">
@@ -22,7 +23,7 @@
         class="flags"
         :src="loadImage('EuroFlags/Euro' + usuario.votos[2].participant.country.code + '.png')"
         :alt="'Euro' + usuario.votos[2].participant.country.code"
-      >
+      />
       <p class="nombrePais">{{usuario.votos[2].participant.country.name}}</p>
     </th>
   </tr>

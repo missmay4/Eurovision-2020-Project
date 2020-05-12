@@ -127,17 +127,18 @@ public class VoteDao {
 	// ------------------------------------------------------------------
 	public List<Vote> findRepeated() throws SQLException {
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
-			try (ResultSet rs = query.executeQuery("SELECT * FROM vote")) {
+			try (ResultSet rs = query.executeQuery("SELECT participant_id, COUNT(*) FROM vote GROUP BY participant_id HAVING COUNT(*) > 1")) {
+				// Revisar la query, ahora devuelve una lista con los datos de los que aparecen más de una vez 
 				List<Vote> repetidos = new ArrayList<>();
 
 				while (rs.next()) {
 					Vote vote = new Vote();
-					vote.setId(rs.getInt("id"));
-					vote.setParticipant_id(rs.getInt("participant_id"));
-					vote.setUser_id(rs.getInt("user_id"));
-					vote.setItem_order(rs.getInt("item_order"));
-					vote.setGala_id(rs.getInt("gala_id"));
-					vote.setDate(rs.getTimestamp("date_vote"));
+					//vote.setId(rs.getInt("id"));
+					//vote.setParticipant_id(rs.getInt("participant_id"));
+					//vote.setUser_id(rs.getInt("user_id"));
+					//vote.setItem_order(rs.getInt("item_order"));
+					//vote.setGala_id(rs.getInt("gala_id"));
+					//vote.setDate(rs.getTimestamp("date_vote"));
 					vote.setParticipant(partDao.findParticipant(rs.getInt("participant_id")));
 
 					repetidos.add(vote);

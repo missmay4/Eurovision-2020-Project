@@ -122,5 +122,32 @@ public class VoteDao {
 		return connection;
 
 	}
+	
+	// COSAS NUEVAS 
+	// ------------------------------------------------------------------
+	public List<Vote> findRepeated() throws SQLException {
+		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
+			try (ResultSet rs = query.executeQuery("SELECT * FROM vote")) {
+				List<Vote> repetidos = new ArrayList<>();
+
+				while (rs.next()) {
+					Vote vote = new Vote();
+					vote.setId(rs.getInt("id"));
+					vote.setParticipant_id(rs.getInt("participant_id"));
+					vote.setUser_id(rs.getInt("user_id"));
+					vote.setItem_order(rs.getInt("item_order"));
+					vote.setGala_id(rs.getInt("gala_id"));
+					vote.setDate(rs.getTimestamp("date_vote"));
+					vote.setParticipant(partDao.findParticipant(rs.getInt("participant_id")));
+
+					repetidos.add(vote);
+				}
+
+				return repetidos;
+			}
+		}
+	}
+	// ------------------------------------------------------------------
+	// FIN COSAS NUEVAS
 
 }

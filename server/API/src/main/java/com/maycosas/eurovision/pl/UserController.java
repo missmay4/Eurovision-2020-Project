@@ -136,5 +136,30 @@ public class UserController {
 		}
 
 	}
+	
+	// COSAS NUEVAS 
+	// ------------------------------------------------------------------
+	
+	// (origins = "http://localhost:8000")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/user/repeated/")
+    public Object getRepeated() {
+    	try {
+    		return userService.getRepeated();
+    	} catch (NoSuchElementException nsee) {
+    		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    	} catch (Exception e) {
+    		
+    		StringWriter sw = new StringWriter();
+			PrintWriter pw = new PrintWriter(sw);
+			e.printStackTrace(pw);
+			String sStackTrace = sw.toString();
+
+			return new ResponseEntity<>(sStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
+    		
+    	}
+    }
+    // ------------------------------------------------------------------
+ 	// FIN COSAS NUEVAS
 
 }

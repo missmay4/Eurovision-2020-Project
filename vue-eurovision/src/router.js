@@ -6,6 +6,7 @@ import Votes from './views/Votes.vue'
 import VoteParticipant from './views/VoteParticipant.vue'
 import About from './views/About.vue'
 import Rotterdam from './views/Rotterdam.vue'
+import moreVoted from './views/moreVoted.vue'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/rotterdam',
       name: 'rotterdam',
       component: Rotterdam
+    },
+    {
+      path: '/moreVoted',
+      name: 'moreVoted',
+      component: moreVoted
     }
   ]
 })

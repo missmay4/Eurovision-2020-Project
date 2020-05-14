@@ -20,6 +20,9 @@
         <li class="nav-item">
           <router-link to="/votes">Votes</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/moreVoted">Our ranking</router-link>
+        </li>
       </ul>
     </div>
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">

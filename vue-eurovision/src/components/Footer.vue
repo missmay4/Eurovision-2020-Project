@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>© 2020, Mayte &amp; Andrea</p>
+    <p>© 2020, M.DC.M &amp; A.S.C</p>
     <p>
       Images &amp; Data obtained in
       <a

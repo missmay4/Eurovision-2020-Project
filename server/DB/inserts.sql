@@ -96,6 +96,48 @@ insert into gala (type, date) values
 	('Final', '2020-05-16')
 	
 -- galaParticipant Insert 
+-- 1st Semifinal 12/5/2020
+insert into galaparticipant (gala_id, participant_id, performanceorder) values	
+	(1, 26, 4), -- Macedonia
+	(1, 8, 2), -- Belarus
+	(1, 25, 6), -- Lithuania
+	(1, 39, 1), -- Sweden
+	(1, 13, 5), -- Slovenia
+	(1, 4, 3), -- Australia
+	(1, 20, 7), -- Ireland
+	(1, 36, 8), -- Russia 
+	(1, 29, 14), -- Norway
+	(1, 10, 13), -- Cyprus
+	(1, 11, 11), -- Croatia
+	(1, 6, 12), -- Azerbaijan
+	(1, 27, 10), -- Malta
+	(1, 22, 15), -- Israel
+	(1, 41, 17), -- Ukraine
+	(1, 35, 16), -- Romania
+	(1, 7, 9) -- Belgium
+
+-- 2nd Semifinal 14/5/2020
+insert into galaparticipant (gala_id, participant_id, performanceorder) values	
+	(2, 5, 3), -- Austria
+	(2, 28, 4), -- Moldova
+	(2, 31, 8), -- Poland
+	(2, 37, 5), -- San Marino 
+	(2, 38, 7), -- Serbia
+	(2, 21, 9), -- Iceland
+	(2, 34, 6), -- Checz Republique
+	(2, 19, 1), -- Greece
+	(2, 15, 2), -- Estonia
+	(2, 12, 11), -- Denmark
+	(2, 9, 17), -- Bulgaria
+	(2, 40, 10), -- Switzerland
+	(2, 16, 13), -- Finland
+	(2, 3, 14), -- Armenia
+	(2, 24, 18), -- Latvia
+	(2, 18, 16), -- Georgia
+	(2, 32, 15), -- Portugal
+	(2, 1, 12) -- Albania
+
+-- Final
 insert into galaparticipant (gala_id, participant_id, performanceorder) values
 	(3, 17, 19), -- France
 	(3, 14, 12), -- Spain
@@ -103,43 +145,6 @@ insert into galaparticipant (gala_id, participant_id, performanceorder) values
 	(3, 2, 26), -- Germany
 	(3, 23, 16), -- Italy
 	(3, 33, 9) -- United Kingdom
-	
-insert into galaparticipant (gala_id, participant_id, performanceorder) values	
-	(1, 26, 1), -- Macedonia
-	(1, 8, 2), -- Belarus
-	(1, 25, 3), -- Lithuania
-	(1, 39, 4), -- Sweden
-	(1, 13, 5), -- Slovenia
-	(1, 4, 6), -- Australia
-	(1, 20, 7), -- Ireland
-	(1, 36, 8), -- Russia 
-	(1, 29, 9), -- Norway
-	(1, 10, 10), -- Cyprus
-	(1, 11, 11), -- Croatia
-	(1, 6, 12), -- Azerbaijan
-	(1, 27, 13), -- Malta
-	(1, 22, 14), -- Israel
-	(1, 41, 15), -- Ukraine
-	(1, 35, 16), -- Romania
-	(1, 7, 17), -- Belgium
-	(2, 5, 1), -- Austria
-	(2, 28, 2), -- Moldova
-	(2, 31, 3), -- Poland
-	(2, 37, 4), -- San Marino 
-	(2, 38, 5), -- Serbia
-	(2, 21, 6), -- Iceland
-	(2, 34, 7), -- Checz Republique
-	(2, 19, 8), -- Greece
-	(2, 15, 9), -- Estonia
-	(2, 12, 10), -- Denmark
-	(2, 9, 11), -- Bulgaria
-	(2, 40, 12), -- Switzerland
-	(2, 16, 13), -- Finland
-	(2, 3, 14), -- Armenia
-	(2, 24, 15), -- Latvia
-	(2, 18, 16), -- Georgia
-	(2, 32, 17), -- Portugal
-	(2, 1, 18) -- Albania
 	
 insert into galaparticipant (gala_id, participant_id, performanceorder) values -- ganadores 1st semifinal
 	(3, 29, 21), -- Norway

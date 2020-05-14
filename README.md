@@ -24,7 +24,7 @@ Here we'll develop a web application, where most of the function will be **vote*
 
 ![Eurovision2020](eurovision-2020-rotterdam.svg)
 
-## Grand Final _16/05/2020_
+## Grand Final ~~_16/05/2020_~~
 
 ### Participants
 
@@ -40,45 +40,45 @@ Here we'll develop a web application, where most of the function will be **vote*
 - [x] Italy :it: (_Fai Rumore - Diodato_)
 - [x] Germany :de: (_Violent Thing - Ben Dolic_)
 
-#### 1st Semifinal Participants: (_12/05/2020_)
+#### 1st Semifinal Participants: ~~(_12/05/2020_)~~
 
-- [ ] North Macedonia :macedonia: (_You - Vasil Garvanliev_)
-- [ ] Belarus :belarus: (_Da Vidna - VAL_)
-- [ ] Lithuania :lithuania: (_On Fire - The Roop_)
 - [ ] Sweden :sweden: (_Move - The Mamas_)
-- [ ] Slovenia :slovenia: (_Voda - Ana Soklič_)
+- [ ] Belarus :belarus: (_Da Vidna - VAL_)
 - [ ] Australia :australia: (_Don’t Break Me - Montaigne_)
+- [ ] North Macedonia :macedonia: (_You - Vasil Garvanliev_)
+- [ ] Slovenia :slovenia: (_Voda - Ana Soklič_)
+- [ ] Lithuania :lithuania: (_On Fire - The Roop_)
 - [ ] Ireland :ireland: (_Story Of My Life - Lesley Roy_)
 - [ ] Russia :ru: (_UNO - Little Big_)
-- [ ] Norway :norway: (_Attention - Ulrikke Brandstorp_)
-- [ ] Cyprus :cyprus: (_Running - Sandro Nicolas_)
+- [ ] Belgium :belgium: (_Release Me - Hooverphonic_)
+- [ ] Malta :malta: (_All Of My Love - Destiny Chukunyere_)
 - [ ] Croatia :croatia: (_Divlji vjetre - Damir Kedžo_)
 - [ ] Azerbaijan :azerbaijan: (_Cleopatra - Samira Efendi_)
-- [ ] Malta :malta: (_All Of My Love - Destiny Chukunyere_)
+- [ ] Cyprus :cyprus: (_Running - Sandro Nicolas_)
+- [ ] Norway :norway: (_Attention - Ulrikke Brandstorp_)
 - [ ] Israel :israel: (_Feker Libi - Eden Alene_)
-- [ ] Ukraine :ukraine: (_Solovey - Go_A_)
 - [ ] Romania :romania: (_Alcohol You - Roxen_)
-- [ ] Belgium :belgium: (_Release Me - Hooverphonic_)
+- [ ] Ukraine :ukraine: (_Solovey - Go_A_)
 
-#### 2nd Semifinal Participants: (_14/05/2020_)
+#### 2nd Semifinal Participants: ~~(_14/05/2020_)~~
 
-- [ ] Austria :austria: (_Alive - Vincent Bueno_)
-- [ ] Moldova :moldova: (_Prison - Natalia Gordienco_)
-- [ ] Poland :poland: (_Empires - Alicja Szemplińska_)
-- [ ] San Marino :san_marino: (\_Freaky! - Senhit*)
-- [ ] Serbia :serbia: (_Hasta La Vista - Hurricane_)
-- [ ] Iceland :iceland: (_Think About Things - Daði & Gagnamagnið_)
-- [ ] Czech Republic :czech_republic: (\_Kemama - Benny Cristo*)
 - [ ] Greece :greece: (_Superg!rl - Stefania Liberakakis_)
 - [ ] Estonia :estonia: (_What Love Is - Uku Suviste_)
-- [ ] Denmark :denmark: (_Yes - Ben & Tan_)
-- [ ] Bulgaria :bulgaria: (_Tears Getting Sober - Victoria Georgieva_)
+- [ ] Austria :austria: (_Alive - Vincent Bueno_)
+- [ ] Moldova :moldova: (_Prison - Natalia Gordienco_)
+- [ ] San Marino :san_marino: (_Freaky! - Senhit_)
+- [ ] Czech Republic :czech_republic: (_Kemama - Benny Cristo_)
+- [ ] Serbia :serbia: (_Hasta La Vista - Hurricane_)
+- [ ] Poland :poland: (_Empires - Alicja Szemplińska_)
+- [ ] Iceland :iceland: (_Think About Things - Daði & Gagnamagnið_)
 - [ ] Switzerland :switzerland: (_Répondez-moi - Gjon's Tears_)
+- [ ] Denmark :denmark: (_Yes - Ben & Tan_)
+- [ ] Albania :albania: (_Fall From The Sky - Arilena Ara_)
 - [ ] Finland :finland: (_Looking Back - Aksel Kankaanranta_)
 - [ ] Armenia :armenia: (_Chains on You - Athena Manoukian_)
-- [ ] Latvia :latvia: (_Still Breathing - Samanta Tīna_)
-- [ ] Georgia :georgia: (_Take Me As I Am - Tornike Kipiani_)
 - [ ] Portugal :portugal: (_Medo de Sentir - Elisa Silva_)
-- [ ] Albania :albania: (_Fall From The Sky - Arilena Ara_)
+- [ ] Bulgaria :bulgaria: (_Tears Getting Sober - Victoria Georgieva_)
+- [ ] Georgia :georgia: (_Take Me As I Am - Tornike Kipiani_)
+- [ ] Latvia :latvia: (_Still Breathing - Samanta Tīna_)
 
 #### Not Qualified:

@@ -1,7 +1,7 @@
 <template>
   <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="card">
-      <img :src="loadImage('EuroSingers/' + countryCode + '.jpg')" class="card-img-top" :alt="name">
+      <img :src="loadImage('EuroSingers/' + countryCode + '.jpg')" class="card-img-top" :alt="name" />
       <div class="card-body noPadding">
         <div class="artistCountry">
           <div class="artistFlag">
@@ -9,7 +9,7 @@
               class="flags"
               :src="loadImage('EuroFlags/Euro' + countryCode + '.png')"
               :alt="'Euro' + countryCode"
-            >
+            />
           </div>
           <div class="artistTitle">
             <h5 class="card-title cardMargin noMargin">
@@ -18,7 +18,7 @@
           </div>
         </div>
         <h6 class="card-title cardFont noMargin">{{name}}</h6>
-        <a :href="songLink" class="card-title">Escucha su canción</a>
+        <a :href="songLink" class="card-title">Listen the song!</a>
       </div>
     </div>
   </div>

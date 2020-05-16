@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="display-4">More Voted of our APP</h1>
+    <h1>More Voted of our APP</h1>
     <table class="table">
       <thead>
         <tr>
@@ -30,7 +30,7 @@ export default {
     axios.get("http://localhost:8080/user/").then(response => {
       this.usuarios = response.data;
       let json = response.data;
-      //console.log(json);
+      console.log(this.usuarios);
       let totalVotos = [];
       json.forEach(element => {
         let votos = element.votos;

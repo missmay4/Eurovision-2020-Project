@@ -12,7 +12,7 @@
           class="btn btn-light btn-lg btn-block"
           v-bind:class="{disabled: this.distance > 0}"
           role="button"
-        >Vota!</a>
+        >Vote!</a>
       </router-link>
     </div>
   </div>

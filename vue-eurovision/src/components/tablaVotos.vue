@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h1 class="display-4">Votaciones</h1>
+    <h1>Voting</h1>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col" class="nombre">Nombre</th>
+          <th scope="col" class="nombre">Name</th>
           <th scope="col">Gala</th>
-          <th scope="col">Opcion 1</th>
-          <th scope="col">Opcion 2</th>
-          <th scope="col">Opcion 3</th>
+          <th scope="col">Option 1</th>
+          <th scope="col">Option 2</th>
+          <th scope="col">Option 3</th>
         </tr>
       </thead>
       <tbody>

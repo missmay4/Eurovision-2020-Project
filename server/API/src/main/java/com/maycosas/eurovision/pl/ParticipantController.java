@@ -31,4 +31,24 @@ public class ParticipantController {
 		}
 	}
 
+	// COSAS NUEVAS
+	// ---------------------------------------------------------------------- Devuelve un json con todos los participantes sin gala
+	@CrossOrigin()
+	@GetMapping("/onlyparticipants/")
+	public Object getOnlyParticipants() {
+		try {
+			return participantService.getOnlyParticipants();
+
+		} catch (NoSuchElementException nsee) {
+			// TODO devolver un HTTP 404
+			return null;
+		} catch (Exception e) {
+			// TODO devolver un HTTP 500
+			System.out.println(e);
+			return null;
+		}
+	}
+	// ----------------------------------------------------------------------
+
+	
 }

@@ -94,4 +94,30 @@ public class ParticipantDao {
 		return connection;
 
 	}
+	
+	// COSAS NUEVAS
+	// ---------------------------------------------------------------------- Devuelve solo los participantes, sin gala
+	public List<Participant> findOnlyParticipants() throws SQLException {
+
+		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
+			try (ResultSet rs = query.executeQuery("SELECT * FROM participant")) {
+				List<Participant> participants = new ArrayList<>();
+
+				while (rs.next()) {
+						Participant participant = new Participant();
+						participant.setId(rs.getInt("id"));
+						participant.setCountry(countriesDao.findCountry(rs.getInt("country_id")));
+						participant.setName(rs.getString("name"));
+						participant.setSong(rs.getString("song"));
+						participant.setYear(rs.getInt("year"));
+						participant.setSong_link(rs.getString("song_link"));
+						participant.setLanguage(rs.getString("language"));	
+						participants.add(participant);
+				}
+
+				return participants;
+			}
+		}
+	}
+	// ----------------------------------------------------------------------
 }

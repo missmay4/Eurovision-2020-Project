@@ -19,5 +19,13 @@ public class ParticipantService {
 
 		return dao.findAllParticipant();
 	}
+	
+	// COSAS NUEVAS
+	// ----------------------------------------------------------------------
+	public List<Participant> getOnlyParticipants() throws SQLException {
+		return dao.findOnlyParticipants();
+	}
+	// ----------------------------------------------------------------------
+
 
 }

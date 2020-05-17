@@ -139,35 +139,35 @@ insert into galaparticipant (gala_id, participant_id, performanceorder) values
 
 -- Final
 insert into galaparticipant (gala_id, participant_id, performanceorder) values
-	(3, 17, 19), -- France
+	(3, 17, 3), -- France
 	(3, 14, 12), -- Spain
-	(3, 30, 10), -- Netherlands
-	(3, 2, 26), -- Germany
-	(3, 23, 16), -- Italy
+	(3, 30, 26), -- Netherlands
+	(3, 2, 21), -- Germany
+	(3, 23, 24), -- Italy
 	(3, 33, 9) -- United Kingdom
 	
 insert into galaparticipant (gala_id, participant_id, performanceorder) values -- ganadores 1st semifinal
-	(3, 29, 21), -- Norway
-	(3, 39, 15), -- Sweden
-	(3, 25, 2), -- Lithuania
-	(3, 36, 8), -- Russia 
-	(3, 7, 5), -- Belgium
+	(3, 29, 1), -- Norway
+	(3, 39, 6), -- Sweden
+	(3, 25, 5), -- Lithuania
+	(3, 36, 2), -- Russia 
+	(3, 7, 8), -- Belgium
 	(3, 6, 4), -- Azerbaijan
-	(3, 20, 1), -- Ireland
-	(3, 41, 11), -- Ukraine
+	(3, 20, 14), -- Ireland
+	(3, 41, 22), -- Ukraine
 	(3, 35, 20), -- Romania
-	(3, 10, 3) -- Cyprus
+	(3, 10, 19) -- Cyprus
 	
 insert into galaparticipant (gala_id, participant_id, performanceorder) values -- ganadores 2st semifinal 
-	(3, 34, 25), -- Checz Republique
-	(3, 1, 6), -- Albania
-	(3, 12, 22), -- Denmark
-	(3, 38, 7), -- Serbia
-	(3, 24, 23), -- Latvia
-	(3, 21, 13), -- Iceland
-	(2, 40, 14), -- Switzerland
-	(3, 5, 17), -- Austria
-	(3, 3, 18), -- Armenia
-	(3, 37, 24) -- San Marino 
+	(3, 34, 18), -- Checz Republique
+	(3, 1, 13), -- Albania
+	(3, 12, 23), -- Denmark
+	(3, 38, 11), -- Serbia
+	(3, 24, 7), -- Latvia
+	(3, 21, 17), -- Iceland
+	(3, 40, 10), -- Switzerland
+	(3, 5, 15), -- Austria
+	(3, 3, 25), -- Armenia
+	(3, 37, 16) -- San Marino 
 	
 

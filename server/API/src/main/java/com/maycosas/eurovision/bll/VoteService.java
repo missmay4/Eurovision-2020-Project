@@ -1,6 +1,7 @@
 package com.maycosas.eurovision.bll;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,14 @@ public class VoteService {
 	public int saveVote(Vote vote) throws SQLException {
 		return dao.saveVote(vote);
 
+	}
+	
+	/**
+	 * @return devuelve una lista con todos los votos
+	 * @throws SQLException
+	 */
+	public List<Vote> getVotes() throws SQLException {
+		return dao.getOnlyVotes();
 	}
 
 }

@@ -46,17 +46,4 @@ public class UserService {
 		return user;
 	}
 	
-	// COSAS NUEVAS 
-	// ------------------------------------------------------------------
-	
-	/**
-	 * @return devuelve una lista con los paises repetidos
-	 * @throws SQLException
-	 */
-	public List<User> getRepeated() throws SQLException {
-		return dao.findRepeated();
-	}
-	// ------------------------------------------------------------------
-	// FIN COSAS NUEVAS
-
 }

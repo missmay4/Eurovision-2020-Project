@@ -12,7 +12,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.maycosas.eurovision.entities.User;
-import com.maycosas.eurovision.entities.Vote;
 
 @Repository
 public class UserDao {
@@ -138,36 +137,5 @@ public class UserDao {
 		return connection;
 
 	}
-	
-	// COSAS NUEVAS 
-	// ------------------------------------------------------------------
-	
-	/**
-	 * 
-	 * @return Metodo que devuelve una lista de votos repetidos de usuarios
-	 * @throws SQLException
-	 */
-	public List<User> findRepeated() throws SQLException {
-
-		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
-			try (ResultSet rs = query.executeQuery("SELECT * FROM user_")) {
-				List<User> users = new ArrayList<>();
-
-				while (rs.next()) {
-					User user = new User();
-					user.setId(rs.getInt("id"));
-					user.setName(rs.getString("name"));
-					user.setVotos((ArrayList<Vote>) voteDao.findRepeated());
-
-					users.add(user);
-				}
-
-				return users;
-			}
-		}
-	}
-	
-	// ------------------------------------------------------------------
-	// FIN COSAS NUEVAS
 
 }

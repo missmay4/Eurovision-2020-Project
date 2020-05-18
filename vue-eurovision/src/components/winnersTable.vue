@@ -1,14 +1,10 @@
 <template>
   <tr>
     <th scope="row">
-      <img
-        class="flags"
-        :src="loadImage('EuroFlags/Euro' + usuario.votos[0].participant.country.code + '.png')"
-        :alt="'Euro' + usuario.votos[0].participant.country.code"
-      />
-      <p class="nombrePais">{{usuario.votos[0].participant.country.name}}</p>
+      <!-- <img class="flags" :src="loadImage('EuroFlags/Euro' + code + '.png')" :alt="'Euro' + code" /> -->
+      <p class="nombrePais">{{name}}</p>
     </th>
-    <th scope="row"></th>
+    <!-- <th scope="row">{{vote}}</th> -->
     <!-- Numero de veces que se repite el voto -->
   </tr>
 </template>
@@ -17,8 +13,10 @@
 export default {
   name: "VotosFinales",
   props: {
-    usuario: Object,
-    participant: Object
+    /*usuario: Object,
+    participant: Object, */
+    name: String
+    //vote: Number
   },
   methods: {
     loadImage(imageName) {
@@ -32,10 +30,6 @@ export default {
 .nombrePais {
   display: inline-block;
   margin-left: 10px;
-}
-
-.nombreUser {
-  color: #273b75;
 }
 
 th {

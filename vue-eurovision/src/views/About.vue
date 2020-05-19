@@ -1,8 +1,9 @@
 <template>
+
 <div class="container">
-   <div class="row justify-content-center">
-    <h1>About Eurovision</h1>
-    </div>
+  <div class="header">
+  <img class="" src="../assets/About/hero2.jpg" width = "100%" />
+  </div>
     <div class="row">
     <div class="col"  md="6" offset-md="3" >  
     <p>The first Contest was held on 24 May 1956, when seven nations participated. 
@@ -13,7 +14,7 @@
     </div>
     </div>
    <div class="row justify-content-center">
-    <h2>Votes please</h2>
+    <h2 class="titles">Votes please</h2>
     </div>
     <div class="row">
     <div class="col"  md="6" offset-md="3" >
@@ -27,7 +28,7 @@
     </div>
     </div>
     <div class="row justify-content-center">
-    <h2>Expanding with Semi-Finals</h2>
+    <h2 class="titles">Expanding with Semi-Finals</h2>
     </div>
     <div class="row">
     <div class="col"  md="6" offset-md="3" >
@@ -36,10 +37,11 @@
       This process has continued to this day with more and more countries joining. For this reason, in 2004 the Semi-Final format was introduced by the EBU which turned into two Semi-Finals for the Eurovision Song Contest in 2008. 
       Now all countries, except the 'Big Five' – France, Germany, Italy, Spain and the United Kingdom – together with the host country, must be in a Semi-Final top-10 to qualify for the Final.
     </p>
+    <img class="mx-auto d-block" src="../assets/About/semifinals.jpg" width = "700px"/>
      </div>
     </div>
     <div class="row justify-content-center">
-    <h2>60 years and counting</h2>
+    <h2 class="titles">60 years and counting</h2>
     </div>
     <div class="row">
     <div class="col"  md="6" offset-md="3" >
@@ -51,7 +53,7 @@
      </div>
     </div>
      <div class="row justify-content-center">
-    <h2>Facts</h2>
+    <h2 class="titles">Facts</h2>
     </div>
     <div class="row">
     <div class="col"  md="6" offset-md="3" >

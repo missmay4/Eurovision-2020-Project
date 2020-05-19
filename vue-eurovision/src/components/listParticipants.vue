@@ -25,7 +25,7 @@
         :name="participant.name"
         :country="participant.country.name"
         :countryCode="participant.country.code"
-        :songLink="participant.song_link"
+        :songLink="participant.song_link" v-bind:key=(participant.name)
       />
 
       <!-- <Participant

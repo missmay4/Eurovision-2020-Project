@@ -61,3 +61,23 @@ create table vote (
 	foreign key (gala_id) references gala(id)
 )
 
+-- Registered user table
+create table registered_user (
+	id serial primary key, 
+	user_name varchar(20) unique, 
+	user_pass varchar (20)
+)
+
+-- Favorites table 
+create table favorites (
+	id serial primary key, 
+	participant_id serial not null,
+	user_id serial not null,
+	
+	foreign key (participant_id) references participant (id),
+	foreign key (user_id) references registered_user(id)
+
+)
+
+
+

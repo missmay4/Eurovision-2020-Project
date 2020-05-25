@@ -1,10 +1,11 @@
 <template>
   <div>
-    <VotesHeader/>
+    <VotesHeader />
     <div class="row">
       <CountryVote
         v-for="participant in galas[gala]"
         :participant="participant"
+        v-bind:key="participant"
         v-model="checked"
         :disabled="checked.length > 2 && checked.indexOf(participant.id) === -1"
       />
@@ -21,6 +22,7 @@
 import VotesHeader from "@/components/VotesHeader.vue";
 import CountryVote from "@/components/CountryVote.vue";
 import VotesButton from "@/components/VotesButton.vue";
+import axios from "axios";
 
 export default {
   name: "listParticipants",
@@ -28,15 +30,15 @@ export default {
     return {
       gala: 2,
       galas: [[], [], [], []],
-      checked: []
+      checked: [],
     };
   },
   mounted() {
-    axios.get("http://localhost:8080/participant/").then(response => {
+    axios.get("http://localhost:8080/participant/").then((response) => {
       let data = response.data;
       data.sort((a, b) => a.gala.performanceOrder - b.gala.performanceOrder);
 
-      data.forEach(participant => {
+      data.forEach((participant) => {
         this.galas[participant.gala.gala_id].push(participant);
       });
     });
@@ -46,10 +48,9 @@ export default {
   components: {
     CountryVote,
     VotesHeader,
-    VotesButton
-  }
+    VotesButton,
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

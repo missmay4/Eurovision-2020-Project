@@ -1,33 +1,37 @@
 <template>
   <div>
     <div class="row">
-      <CountryVote v-for="participant in participants" :participant="participant"/>
+      <CountryVote
+        v-for="participant in participants"
+        :participant="participant"
+        v-bind:key="participant"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import CountryVote from "@/components/CountryVote.vue";
+import axios from "axios";
 
 export default {
   name: "listParticipants",
   data() {
     return {
-      participants: []
+      participants: [],
     };
   },
   mounted() {
-    axios.get("http://localhost:8080/participant/").then(response => {
+    axios.get("http://localhost:8080/participant/").then((response) => {
       let data = response.data;
       data.sort((a, b) => a.country.name.localeCompare(b.country.name));
       this.participants = data;
     });
   },
   components: {
-    CountryVote
-  }
+    CountryVote,
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -8,8 +8,11 @@
         <div class="modal-body">
           <!-- Votos  -->
           <imageCountry
-            v-for="participant in participants.filter((participant) => { return selectedParticipants.indexOf(participant.id) !== -1})"
+            v-for="participant in participants.filter((participant) => {
+              return selectedParticipants.indexOf(participant.id) !== -1;
+            })"
             :participant="participant"
+            v-bind:key="participant.id"
           />
           <form action>
             <div class="form-group row">
@@ -18,7 +21,7 @@
                   type="name"
                   class="marg"
                   required
-                  v-bind:class="{'form-control': true, 'is-invalid': !valido}"
+                  v-bind:class="{ 'form-control': true, 'is-invalid': !valido }"
                   placeholder="Tu nombre"
                   v-model="name"
                 />
@@ -28,7 +31,9 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button @click="vote()" class="btn btn-primary" data-dismiss="modal">A votar!</button>
+          <button @click="vote()" class="btn btn-primary" data-dismiss="modal">
+            A votar!
+          </button>
           <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button> -->
         </div>
       </div>
@@ -38,25 +43,26 @@
 
 <script>
 import imageCountry from "@/components/imageCountry.vue";
+import axios from "axios";
 
 export default {
   name: "VoteModal",
   props: {
     selectedParticipants: Array,
-    participants: Array
+    participants: Array,
   },
   data() {
     return {
       name: "",
-      valido: true
+      valido: true,
     };
   },
   methods: {
     vote: function() {
       const config = {
         headers: {
-          "Content-Type": "multipart/form-data"
-        }
+          "Content-Type": "multipart/form-data",
+        },
       };
       let form_user = new FormData();
       form_user.append("name", this.name);
@@ -69,25 +75,25 @@ export default {
 
       axios
         .post("http://localhost:8080/user/", form_user)
-        .then(response => {
+        .then((response) => {
           axios
             .post(
               "http://localhost:8080/user/" + response.data.id + "/vote",
               form_votes
             )
-            .then(response => {
+            .then((response) => {
               this.valido = true;
             });
         })
-        .catch(error => {
+        .catch((error) => {
           // handle error
           this.valido = false;
         });
-    }
+    },
   },
   components: {
-    imageCountry
-  }
+    imageCountry,
+  },
 };
 </script>
 

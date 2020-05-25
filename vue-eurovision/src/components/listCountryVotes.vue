@@ -5,7 +5,7 @@
       <CountryVote
         v-for="participant in galas[gala]"
         :participant="participant"
-        v-bind:key="participant"
+        v-bind:key="participant.country.name"
         v-model="checked"
         :disabled="checked.length > 2 && checked.indexOf(participant.id) === -1"
       />

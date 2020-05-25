@@ -1,9 +1,12 @@
 <template>
   <div class="col-md-4">
     <div class="form-check form-check-inline">
-      <label class="form-check-label espaciocheck country" for="inlineCheckbox1">
-        <b>{{participant.gala.performanceOrder}}.</b>
-        {{participant.country.name}}
+      <label
+        class="form-check-label espaciocheck country"
+        for="inlineCheckbox1"
+      >
+        <b class="number">{{ participant.gala.performanceOrder }}.</b>
+        {{ participant.country.name }}
       </label>
       <input
         class="form-check-input checkear"
@@ -11,13 +14,13 @@
         :value="participant.id"
         v-model="InternalValue"
         :disabled="disabled"
-      >
+      />
     </div>
     <img
       class="flags"
       :src="loadImage('EuroFlags/Euro' + participant.country.code + '.png')"
       :alt="'Euro' + participant.country.code"
-    >
+    />
   </div>
 </template>
 
@@ -27,15 +30,15 @@ export default {
   props: {
     participant: Object,
     checked: Array,
-    disabled: Boolean
+    disabled: Boolean,
   },
   methods: {
     loadImage(imageName) {
       return require("../assets/" + imageName);
-    }
+    },
   },
   model: {
-    prop: "checked"
+    prop: "checked",
   },
   computed: {
     InternalValue: {
@@ -44,11 +47,14 @@ export default {
       },
       set(v) {
         this.$emit("input", v);
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 
 <style scoped>
+.number {
+  color: black;
+}
 </style>

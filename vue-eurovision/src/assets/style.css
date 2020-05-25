@@ -42,6 +42,10 @@ input {
   padding: 0.5rem;
 }
 
+label {
+  color: var(--c-medium);
+}
+
 input:placeholder-shown {
   border: var(--c-accent) 2px solid;
 }
@@ -203,7 +207,7 @@ th {
 th {
   background-color: #7590da;
 } */
-.titles{
+.titles {
   color: #224488;
   padding-top: 2em;
 }

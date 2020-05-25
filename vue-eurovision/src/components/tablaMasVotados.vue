@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="display-4">Total votes of our APP</h1>
+    <h1>Total votes of our APP</h1>
     <div class="row">
       <table class="table col-md-6">
         <thead>
@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <winnersTable v-for="name in names" :name="name" />
+          <winnersTable v-for="name in names" :name="name" v-bind:key="name" />
           <!--<winnersTable v-for=" vote in totalVotes" :vote="vote" /> -->
         </tbody>
       </table>
@@ -23,7 +23,11 @@
         </thead>
         <tbody>
           <!-- <winnersTable v-for=" code in codes" :code="code" /> -->
-          <winnersTable2 v-for="vote in totalVotes" :vote="vote" />
+          <winnersTable2
+            v-for="vote in totalVotes"
+            :vote="vote"
+            v-bind:key="vote"
+          />
         </tbody>
       </table>
     </div>
@@ -82,12 +86,12 @@ export default {
         return [a, b];
       }
 
-      function asc(arr) {
+      /* function asc(arr) {
         arr.sort(function(a, b) {
           return b - a;
         });
         return arr;
-      }
+      } */
 
       var result = repeated(totalVotos);
       var names = result[0];

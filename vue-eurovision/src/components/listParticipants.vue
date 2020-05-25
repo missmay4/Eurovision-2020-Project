@@ -25,7 +25,8 @@
         :name="participant.name"
         :country="participant.country.name"
         :countryCode="participant.country.code"
-        :songLink="participant.song_link" v-bind:key=(participant.name)
+        :songLink="participant.song_link"
+        v-bind:key="participant.name"
       />
 
       <!-- <Participant
@@ -42,17 +43,18 @@
 
 <script>
 import Participant from "@/components/Participant.vue";
+import axios from "axios";
 
 export default {
   name: "listParticipants",
   data() {
     return {
       participants: [],
-      gala: undefined
+      gala: undefined,
     };
   },
   mounted() {
-    axios.get("http://localhost:8080/onlyparticipants/").then(response => {
+    axios.get("http://localhost:8080/onlyparticipants/").then((response) => {
       let data = response.data;
       data.sort((a, b) => a.country.name.localeCompare(b.country.name));
       this.participants = data;
@@ -68,10 +70,9 @@ export default {
     } */
   },
   components: {
-    Participant
-  }
+    Participant,
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

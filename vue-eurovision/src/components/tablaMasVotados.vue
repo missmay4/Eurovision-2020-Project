@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <winnersTable v-for=" name in names" :name="name" />
+          <winnersTable v-for="name in names" :name="name" />
           <!--<winnersTable v-for=" vote in totalVotes" :vote="vote" /> -->
         </tbody>
       </table>
@@ -23,7 +23,7 @@
         </thead>
         <tbody>
           <!-- <winnersTable v-for=" code in codes" :code="code" /> -->
-          <winnersTable2 v-for=" vote in totalVotes" :vote="vote" />
+          <winnersTable2 v-for="vote in totalVotes" :vote="vote" />
         </tbody>
       </table>
     </div>
@@ -33,6 +33,7 @@
 <script>
 import winnersTable from "@/components/winnersTable.vue";
 import winnersTable2 from "@/components/winnersTable2.vue";
+import axios from "axios";
 
 export default {
   name: "tablaMasVotados",
@@ -41,19 +42,19 @@ export default {
       usuarios: [],
       participants: [],
       names: [],
-      totalVotes: []
+      totalVotes: [],
     };
   },
   mounted() {
-    axios.get("http://localhost:8080/user/").then(response => {
+    axios.get("http://localhost:8080/user/").then((response) => {
       this.usuarios = response.data;
       let json = response.data;
       //console.log(json);
       let totalVotos = [];
-      json.forEach(element => {
+      json.forEach((element) => {
         let votos = element.votos;
         //console.log(votos);
-        votos.forEach(el => {
+        votos.forEach((el) => {
           let participant = el.participant.country.name;
           //console.log(participant);
           totalVotos.push(participant);
@@ -101,8 +102,8 @@ export default {
   },
   components: {
     winnersTable,
-    winnersTable2
-  }
+    winnersTable2,
+  },
 };
 </script>
 

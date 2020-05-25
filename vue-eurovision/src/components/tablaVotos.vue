@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <FinalVotes v-for=" usuario in usuarios" :usuario="usuario" />
+        <FinalVotes v-for="usuario in usuarios" :usuario="usuario" />
       </tbody>
     </table>
   </div>
@@ -20,23 +20,24 @@
 
 <script>
 import FinalVotes from "@/components/FinalVotes.vue";
+import axios from "axios";
 
 export default {
   name: "tablaVotos",
   data() {
     return {
       usuarios: [],
-      participants: []
+      participants: [],
     };
   },
   mounted() {
-    axios.get("http://localhost:8080/user/").then(response => {
+    axios.get("http://localhost:8080/user/").then((response) => {
       this.usuarios = response.data;
     });
   },
   components: {
-    FinalVotes
-  }
+    FinalVotes,
+  },
 };
 </script>
 

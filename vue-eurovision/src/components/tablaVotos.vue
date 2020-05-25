@@ -12,7 +12,11 @@
         </tr>
       </thead>
       <tbody>
-        <FinalVotes v-for="usuario in usuarios" :usuario="usuario" />
+        <FinalVotes
+          v-for="usuario in usuarios"
+          :usuario="usuario"
+          v-bind:key="usuario.name"
+        />
       </tbody>
     </table>
   </div>

@@ -1,7 +1,8 @@
 <template>
   <header class="navbar">
     <router-link class="navbar-brand" to="/">
-      <img src="../assets/EuroFlags/EuroNL.png" width="30" height="30" alt /> Eurovision 2020
+      <img src="../assets/EuroFlags/EuroNL.png" width="30" height="30" alt />
+      Eurovision 2020
     </router-link>
     <div class="navbar-nav-scroll">
       <ul class="navbar-nav bd-navbar-nav flex-row">
@@ -22,6 +23,9 @@
         </li>
         <li class="nav-item">
           <router-link to="/moreVoted">Our ranking</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/favorites">Save your favorites</router-link>
         </li>
       </ul>
     </div>
@@ -47,5 +51,4 @@
   </header>
 </template>
 
-<style>
-</style>
+<style></style>

@@ -1,25 +1,14 @@
 <template>
-  <form>
+  <form @submit.prevent="register">
     <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
-      <input
-        type="text"
-        class="form-control"
-        id="username-register"
-        aria-describedby="nameHelp"
-        placeholder="Choose a username"
-        v-model="username"
-      />
+      <input type="text" class="form-control" id="username-register" aria-describedby="nameHelp"
+        placeholder="Choose a username" v-model="username" />
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password-register"
-        placeholder="Choose a password"
-        v-model="password"
-      />
+      <input type="password" class="form-control" id="password-register" placeholder="Choose a password"
+        v-model="password" />
     </div>
     <!-- <div class="form-group">
       <label for="exampleInputPassword1">Country</label>
@@ -35,36 +24,45 @@
 </template>
 
 <script>
-import axios from "axios";
+  import axios from "axios";
 
-export default {
-  name: "Register",
-  data() {
-    return {
-      username: "",
-      password: "",
-    };
-  },
-  methods: {
-    register: function() {
-      const config = {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+  export default {
+    name: "Register",
+    data() {
+      return {
+        username: "",
+        password: "",
       };
-      let form_user = new FormData();
-      let form_password = new FormData();
-      form_user.append("username", this.username);
-      form_password.append("password", this.password);
-
-      axios.post(
-        "http://localhost:8080/registered_user/",
-        form_user,
-        form_password
-      );
     },
-  },
-};
+    methods: {
+      register: function () {
+        const config = {
+          headers: {
+            'Content-Type': "multipart/form-data"
+          },
+        };
+        let form = new FormData();
+        form.append("username", this.username);
+        form.append("password", this.password);
+        //axios.post("http://localhost:8080/registered_user/", params, config)ç
+        axios({
+            method: 'post',
+            url: "http://localhost:8080/registered_user/",
+            data:
+              form
+          })
+          .then((response) => {
+            console.log(response.data);
+          }).catch((error) => console.log(error));
+
+        console.log(this.username);
+        console.log(this.password);
+
+      }
+
+
+    }
+  };
 </script>
 
 <style scoped></style>

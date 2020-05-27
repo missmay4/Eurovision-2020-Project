@@ -8,6 +8,7 @@
         id="username-register"
         aria-describedby="nameHelp"
         placeholder="Choose a username"
+        v-model="username"
       />
     </div>
     <div class="form-group">
@@ -17,9 +18,10 @@
         class="form-control"
         id="password-register"
         placeholder="Choose a password"
+        v-model="password"
       />
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="exampleInputPassword1">Country</label>
       <input
         type="text"
@@ -27,13 +29,42 @@
         id="country"
         placeholder="Write your country"
       />
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    </div> -->
+    <button class="btn btn-primary">Submit</button>
   </form>
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+  name: "Register",
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    register: function() {
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      };
+      let form_user = new FormData();
+      let form_password = new FormData();
+      form_user.append("username", this.username);
+      form_password.append("password", this.password);
+
+      axios.post(
+        "http://localhost:8080/registered_user/",
+        form_user,
+        form_password
+      );
+    },
+  },
+};
 </script>
 
 <style scoped></style>

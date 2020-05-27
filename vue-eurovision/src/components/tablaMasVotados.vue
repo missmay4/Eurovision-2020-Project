@@ -1,6 +1,10 @@
 <template>
   <div>
     <h1>Total votes of our APP</h1>
+    <p>
+      In here, you can check the total count of the votes in our app. The number
+      is the total times a country has been voted in semifinals and finals.
+    </p>
     <div class="row">
       <table class="table col-md-6">
         <thead>

@@ -1,7 +1,11 @@
 <template>
   <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="card">
-      <img :src="loadImage('EuroSingers/' + countryCode + '.jpg')" class="card-img-top" :alt="name" />
+      <img
+        :src="loadImage('EuroSingers/' + countryCode + '.jpg')"
+        class="card-img-top"
+        :alt="name"
+      />
       <div class="card-body noPadding">
         <div class="artistCountry">
           <div class="artistFlag">
@@ -13,12 +17,30 @@
           </div>
           <div class="artistTitle">
             <h5 class="card-title cardMargin noMargin">
-              <b>{{country}}</b>
+              <b>{{ country }}</b>
             </h5>
           </div>
         </div>
-        <h6 class="card-title cardFont noMargin">{{name}}</h6>
+        <h6 class="card-title cardFont noMargin">{{ name }}</h6>
         <a :href="songLink" class="card-title">Listen the song!</a>
+        <!-- checkbox para guardar favoritos -->
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <input
+                type="checkbox"
+                aria-label="Checkbox for following text input"
+              />
+            </div>
+            <div class="col-10">
+              <h6 class="text">
+                Select as favorite
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+              </h6>
+            </div>
+          </div>
+        </div>
+        <!-- checkbox para guardar favoritos -->
       </div>
     </div>
   </div>
@@ -30,14 +52,14 @@ export default {
   methods: {
     loadImage(imageName) {
       return require("../assets/" + imageName);
-    }
+    },
   },
   props: {
     name: String,
     country: String,
     countryCode: String,
-    songLink: String
-  }
+    songLink: String,
+  },
 };
 </script>
 
@@ -48,6 +70,10 @@ export default {
 
 .cardMargin {
   margin-top: 3%;
+}
+
+.text {
+  margin-top: 2%;
 }
 
 .noMargin {

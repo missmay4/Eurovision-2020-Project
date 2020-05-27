@@ -1,6 +1,25 @@
 <template>
   <div>
     <h1>Participants</h1>
+    <p>
+      In here, you can check the artist for each country, listen the song and if
+      you want, save your favorites before listen the songs, and dont forget who
+      to vote in the finals. You can save into our database up to 10 favorites.
+      You only have to check and then put your name in the field and put 'save
+      favorites'.
+    </p>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Recipient's username"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+      <div class="input-group-append">
+        <button class="btn btn-outline-danger" type="button">Button</button>
+      </div>
+    </div>
     <!-- <div class="row">
       <div class="col-md-12">
     <ul class="nav nav-tabs justify-content-center">-->

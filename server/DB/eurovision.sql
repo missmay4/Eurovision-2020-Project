@@ -79,5 +79,23 @@ create table favorites (
 
 )
 
+-- User Favorites table
+create table user_favorites (
+	id serial primary key, 
+	user_name varchar(20) unique, 
+	user_country varchar (20)
+)
+
+-- Favorites table 
+create table favorites (
+	id serial primary key, 
+	participant_id serial not null,
+	user_id serial not null,
+	
+	foreign key (participant_id) references participant (id),
+	foreign key (user_id) references user_favorites(id)
+
+)
+
 
 

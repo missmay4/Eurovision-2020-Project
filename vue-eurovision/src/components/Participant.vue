@@ -25,19 +25,18 @@
         <a :href="songLink" class="card-title">Listen the song!</a>
         <!-- checkbox para guardar favoritos -->
         <div class="container">
-          <div class="row">
-            <div class="col-2">
-              <input
-                type="checkbox"
-                aria-label="Checkbox for following text input"
-              />
-            </div>
-            <div class="col-10">
-              <h6 class="text">
-                Select as favorite
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
-              </h6>
-            </div>
+          <div class="row myInput">
+            <input
+              class="form-check-input checkear"
+              type="checkbox"
+              :value="id"
+              v-model="InternalValue"
+              :disabled="disabled"
+            />
+            <h6 class="text">
+              Select as favorite
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </h6>
           </div>
         </div>
         <!-- checkbox para guardar favoritos -->
@@ -55,10 +54,26 @@ export default {
     },
   },
   props: {
+    id: Number,
     name: String,
     country: String,
     countryCode: String,
     songLink: String,
+    checked: Array,
+    disabled: Boolean,
+  },
+  model: {
+    prop: "checked",
+  },
+  computed: {
+    InternalValue: {
+      get() {
+        return this.checked;
+      },
+      set(v) {
+        this.$emit("input", v);
+      },
+    },
   },
 };
 </script>
@@ -82,5 +97,9 @@ export default {
 
 .noPadding {
   padding-bottom: 6px !important;
+}
+
+.myInput {
+  margin-left: 14%;
 }
 </style>

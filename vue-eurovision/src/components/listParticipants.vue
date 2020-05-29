@@ -8,18 +8,6 @@
       You only have to check and then put your name in the field and put 'save
       favorites'.
     </p>
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Recipient's username"
-        aria-label="Recipient's username"
-        aria-describedby="basic-addon2"
-      />
-      <div class="input-group-append">
-        <button class="btn btn-outline-danger" type="button">Button</button>
-      </div>
-    </div>
     <!-- <div class="row">
       <div class="col-md-12">
     <ul class="nav nav-tabs justify-content-center">-->
@@ -41,13 +29,17 @@
     <div class="row no-gutters">
       <Participant
         v-for="participant in participants"
+        :id="participant.id"
         :name="participant.name"
         :country="participant.country.name"
         :countryCode="participant.country.code"
         :songLink="participant.song_link"
         v-bind:key="participant.name"
+        v-model="checked"
+        :disabled="
+          checked.length > 10 && checked.indexOf(participant.id) === -1
+        "
       />
-
       <!-- <Participant
         v-for="participant in participants"
         v-if="gala===undefined || participant.gala.gala_id===gala"
@@ -57,11 +49,21 @@
         :songLink="participant.song_link"
       />-->
     </div>
+    <div class="row">
+      <div class="col-12">
+        <FavoritesButton
+          :selectedParticipants="checked"
+          :participants="participants"
+          :disabled="checked.length < 10"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Participant from "@/components/Participant.vue";
+import FavoritesButton from "@/components/FavoritesButton.vue";
 import axios from "axios";
 
 export default {
@@ -70,6 +72,7 @@ export default {
     return {
       participants: [],
       gala: undefined,
+      checked: [],
     };
   },
   mounted() {
@@ -90,6 +93,7 @@ export default {
   },
   components: {
     Participant,
+    FavoritesButton,
   },
 };
 </script>

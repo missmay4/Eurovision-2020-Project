@@ -7,7 +7,7 @@ import VoteParticipant from './views/VoteParticipant.vue'
 import About from './views/About.vue'
 import Rotterdam from './views/Rotterdam.vue'
 import moreVoted from './views/moreVoted.vue'
-import RegisterLogin from './views/RegisterLogin.vue'
+import Favorites from './views/Favorites.vue'
 
 Vue.use(Router)
 
@@ -52,7 +52,7 @@ export default new Router({
     {
       path: '/favorites',
       name: 'favorites',
-      component: RegisterLogin
+      component: Favorites
     }
   ]
 })

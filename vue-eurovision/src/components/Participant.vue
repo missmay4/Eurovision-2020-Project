@@ -22,7 +22,9 @@
           </div>
         </div>
         <h6 class="card-title cardFont noMargin">{{ name }}</h6>
-        <a :href="songLink" class="card-title">Listen the song!</a>
+        <a :href="songLink" target="_blank" class="card-title"
+          >Listen the song!</a
+        >
         <!-- checkbox para guardar favoritos -->
         <div class="container">
           <div class="row myInput">

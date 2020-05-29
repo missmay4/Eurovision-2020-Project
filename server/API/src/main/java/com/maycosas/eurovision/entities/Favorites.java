@@ -11,7 +11,8 @@ public class Favorites {
 	}
 
 	public Favorites(int participant_id, int user_id) {
-		// TODO Auto-generated constructor stub
+		this.participant_id = participant_id;
+		this.user_id = user_id;
 	}
 
 	public int getId() {

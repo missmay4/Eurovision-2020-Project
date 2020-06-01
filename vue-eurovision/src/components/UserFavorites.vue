@@ -1,38 +1,176 @@
 <template>
-    <div class="card border-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">{{ usuario.username }}</div>
-  <div class="card-body text-primary">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
+  <tr>
+    <th scope="row" class="nombreUser">{{ usuario_fav.username }}</th>
+    <th scope="row">{{ usuario_fav.favorites[0].participant_fav.gala.gala_id }}</th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[0].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[0].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[0].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[1].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[1].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[1].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[2].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[2].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[2].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[3].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[3].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[3].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[4].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[4].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[4].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[5].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[5].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[5].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[6].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[6].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[6].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[7].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[7].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[7].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[8].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[8].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[8].participant_fav.country.name }}</p>
+    </th>
+    <th scope="row">
+      <img
+        class="flags"
+        :src="
+          loadImage(
+            'EuroFlags/Euro' +
+              usuario_fav.favorites[9].participant_fav.country.code +
+              '.png'
+          )
+        "
+        :alt="'Euro' + usuario_fav.favorites[9].participant_fav.country.code"
+      />
+      <p class="nombrePais">{{ usuario_fav.favorites[9].participant_fav.country.name }}</p>
+    </th>
+  </tr>
 </template>
+
 <script>
-import axios from "axios"
 export default {
-   name: "UserFavorites",
-  data() {
-    return {
-      usuario: Object,
-      participants: Object,
-    };
+  name: "UserFavorites",
+  props: {
+    usuario_fav: Object,
+    participant_fav: Object,
   },
-  
-    methods: {
+  methods: {
     loadImage(imageName) {
       return require("../assets/" + imageName);
     },
-      mounted() {
-    axios.get("http://localhost:8080/user_favorites/").then((response) => {
-      this.usuario = response.data;
-      console.log(response.data)
-    });
   },
-  }
-   
+};
+</script>
+
+<style>
+.nombrePais {
+  display: inline-block;
+  margin-left: 10px;
 }
 
-</script>
-<style scoped>
+.nombreUser {
+  color: #273b75;
+}
 
+th {
+  background-color: #ffffff;
+}
 </style>

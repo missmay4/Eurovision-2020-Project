@@ -1,25 +1,48 @@
 <template>
+  <div>
     <h1>Favorites</h1>
-     <UserFavorites
-          v-for="usuario in usuarios"
-          :usuario="usuario"
-          v-bind:key="usuario.username"
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="nombre">Name</th>
+          <th scope="col">Favorite 1</th>
+          <th scope="col">Favorite 2</th>
+          <th scope="col">Favorite 3</th>
+          <th scope="col">Favorite 4</th>
+          <th scope="col">Favorite 5</th>
+          <th scope="col">Favorite 6</th>
+          <th scope="col">Favorite 7</th>
+          <th scope="col">Favorite 8</th>
+          <th scope="col">Favorite 9</th>
+          <th scope="col">Favorite 10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <FinalVotes
+          v-for="usuario_fav in usuarios_fav"
+          :usuario="usuario_fav"
+          v-bind:key="usuario_fav.id"
         />
+      </tbody>
+    </table>
+  </div>
 </template>
+
 <script>
 import UserFavorites from "@/components/UserFavorites.vue";
 import axios from "axios";
+
 export default {
-  name: "listFavorites",
+  name: "tablaVotos",
   data() {
     return {
-      usuarios: [],
-      participants: [],
+      usuarios_fav: [],
+      participants_fav: [],
     };
   },
   mounted() {
     axios.get("http://localhost:8080/user_favorites/").then((response) => {
-      this.usuarios = response.data;
+      this.usuarios_fav = response.data;
       console.log(response.data);
     });
   },
@@ -28,6 +51,9 @@ export default {
   },
 };
 </script>
-<style scoped>
 
+<style lang="css" scoped>
+.nombre {
+  color: #273b75;
+}
 </style>

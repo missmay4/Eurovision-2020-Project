@@ -1,12 +1,12 @@
 <template>
-    <UserFavorites/>
+    <listFavorites/>
 </template>
 <script>
-import UserFavorites from "@/components/UserFavorites.vue"
+import listFavorites from "@/components/listFavorites.vue"
 export default {
     name: "Favorites",
     components: {
-        UserFavorites,
+        listFavorites,
     }
 }
 </script>

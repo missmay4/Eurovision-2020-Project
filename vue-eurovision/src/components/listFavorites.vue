@@ -18,7 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        <FinalVotes
+        <UserFavorites
           v-for="usuario_fav in usuarios_fav"
           :usuario="usuario_fav"
           v-bind:key="usuario_fav.id"
@@ -33,7 +33,7 @@ import UserFavorites from "@/components/UserFavorites.vue";
 import axios from "axios";
 
 export default {
-  name: "tablaVotos",
+  name: "listFavorites",
   data() {
     return {
       usuarios_fav: [],

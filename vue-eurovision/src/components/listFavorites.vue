@@ -5,6 +5,7 @@
       <thead>
         <tr>
           <th scope="col" class="nombre">Name</th>
+          <th scope="col" class="nombre">Country</th>
           <th scope="col">Favorite 1</th>
           <th scope="col">Favorite 2</th>
           <th scope="col">Favorite 3</th>
@@ -19,9 +20,9 @@
       </thead>
       <tbody>
         <UserFavorites
-          v-for="usuario_fav in usuarios_fav"
-          :usuario="usuario_fav"
-          v-bind:key="usuario_fav.id"
+          v-for="usuario in usuarios"
+          :usuario="usuario"
+          v-bind:key="usuario.username"
         />
       </tbody>
     </table>
@@ -36,13 +37,12 @@ export default {
   name: "listFavorites",
   data() {
     return {
-      usuarios_fav: [],
-      participants_fav: [],
+      usuarios: [],
     };
   },
   mounted() {
     axios.get("http://localhost:8080/user_favorites/").then((response) => {
-      this.usuarios_fav = response.data;
+      this.usuarios= response.data;
       console.log(response.data);
     });
   },

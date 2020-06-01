@@ -1,20 +1,20 @@
 <template>
   <tr>
-    <th scope="row" class="nombreUser">{{ usuario_fav.username }}</th>
-    <th scope="row">{{ usuario_fav.favorites[0].participant_fav.gala.gala_id }}</th>
+    <th scope="row" class="nombreUser">{{ usuario.username }}</th>
+    <th scope="row" class="nombreUser">{{ usuario.country }}</th>
     <th scope="row">
       <img
         class="flags"
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[0].participant_fav.country.code +
+              usuario.favorites[0].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[0].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[0].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[0].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[0].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -22,13 +22,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[1].participant_fav.country.code +
+              usuario.favorites[1].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[1].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[1].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[1].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[1].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -36,13 +36,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[2].participant_fav.country.code +
+              usuario.favorites[2].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[2].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[2].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[2].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[2].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -50,13 +50,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[3].participant_fav.country.code +
+              usuario.favorites[3].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[3].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[3].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[3].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[3].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -64,13 +64,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[4].participant_fav.country.code +
+              usuario.favorites[4].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[4].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[4].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[4].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[4].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -78,13 +78,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[5].participant_fav.country.code +
+              usuario.favorites[5].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[5].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[5].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[5].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[5].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -92,13 +92,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[6].participant_fav.country.code +
+              usuario.favorites[6].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[6].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[6].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[6].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[6].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -106,13 +106,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[7].participant_fav.country.code +
+              usuario.favorites[7].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[7].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[7].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[7].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[7].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -120,13 +120,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[8].participant_fav.country.code +
+              usuario.favorites[8].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[8].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[8].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[8].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[8].participant.country.name }}</p>
     </th>
     <th scope="row">
       <img
@@ -134,13 +134,13 @@
         :src="
           loadImage(
             'EuroFlags/Euro' +
-              usuario_fav.favorites[9].participant_fav.country.code +
+              usuario.favorites[9].participant.country.code +
               '.png'
           )
         "
-        :alt="'Euro' + usuario_fav.favorites[9].participant_fav.country.code"
+        :alt="'Euro' + usuario.favorites[9].participant.country.code"
       />
-      <p class="nombrePais">{{ usuario_fav.favorites[9].participant_fav.country.name }}</p>
+      <p class="nombrePais">{{ usuario.favorites[9].participant.country.name }}</p>
     </th>
   </tr>
 </template>
@@ -149,14 +149,14 @@
 export default {
   name: "UserFavorites",
   props: {
-    usuario_fav: Object,
-    participant_fav: Object,
+    usuario: Object,
   },
   methods: {
     loadImage(imageName) {
       return require("../assets/" + imageName);
     },
   },
+
 };
 </script>
 

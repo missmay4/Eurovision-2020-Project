@@ -54,7 +54,7 @@ insert into participant (country_id, name, song, year, song_link, language) valu
 	((select id from country where name = 'Austria'), 'Vicent Bueno', 'Alive', 2020, 'https://youtu.be/cOuiTJlBC50', 'English'),
 	((select id from country where name = 'Azerbaijan'), 'Efendi', 'Cleopatra', 2020, 'https://youtu.be/I0VzBCvO1Wk', 'English & Japanese'),
 	((select id from country where name = 'Belgium'), 'Hooverphonic', 'Release Me', 2020, 'https://youtu.be/lAqjksxc4iA', 'English'),
-	((select id from country where name = 'Belarus'), 'Da Vidna', 'VAL', 2020, 'https://youtu.be/F0wfxz5zq04', 'Belarusian'),
+	((select id from country where name = 'Belarus'), 'VAL', 'Da Vidna', 2020, 'https://youtu.be/F0wfxz5zq04', 'Belarusian'),
 	((select id from country where name = 'Bulgaria'), 'Victoria Georgieva', 'Tears Getting Sober', 2020, 'https://youtu.be/V_hgYnwZR8I', 'English'),
 	((select id from country where name = 'Cyprus'), 'Sandro Nicolas', 'Running', 2020, 'https://youtu.be/Jl_qEw_4OK0', 'English'),
 	((select id from country where name = 'Croatia'), 'Damir Kedžo', 'Divlji vjetre', 2020, 'https://youtu.be/2rOwScdxjJU', 'Croatian'),

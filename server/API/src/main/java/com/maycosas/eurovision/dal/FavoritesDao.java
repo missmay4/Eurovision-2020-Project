@@ -20,6 +20,11 @@ public class FavoritesDao {
 	@Autowired
 	private ParticipantDao partDao;
 
+	/**
+	 * 
+	 * @return Select all data from Favorites table
+	 * @throws SQLException
+	 */
 	public List<Favorites> findAllFavorites() throws SQLException {
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
 			try (ResultSet rs = query.executeQuery("SELECT * FROM favorites")) {
@@ -38,54 +43,73 @@ public class FavoritesDao {
 			}
 		}
 	}
-	
+
+	/**
+	 * 
+	 * @param user_id
+	 * @return Select all data from an specific User with favorites
+	 * @throws SQLException
+	 */
 	public ArrayList<Favorites> findFavoritesUser(int user_id) throws SQLException {
 		ArrayList<Favorites> favorites = new ArrayList<Favorites>();
 		String sql = "SELECT * FROM favorites WHERE user_id = ?";
-		try (Connection conn = getConn(); PreparedStatement query = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+		try (Connection conn = getConn();
+				PreparedStatement query = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 			query.setInt(1, user_id);
-			
-			try(ResultSet rs = query.executeQuery()){
-				while(rs.next()) {
+
+			try (ResultSet rs = query.executeQuery()) {
+				while (rs.next()) {
 					Favorites fav = new Favorites();
 					fav.setId(rs.getInt("id"));
 					fav.setParticipant_id(rs.getInt("participant_id"));
 					fav.setUser_id(rs.getInt("user_id"));
 					fav.setParticipant(partDao.findParticipant(rs.getInt("participant_id")));
-					
+
 					favorites.add(fav);
 				}
 				return favorites;
 			}
 		}
 	}
-	
+
+	/**
+	 * 
+	 * @param favorite
+	 * @return Insert favorites into Favorites table
+	 * @throws SQLException
+	 */
 	public int saveFavorites(Favorites favorite) throws SQLException {
 		String sql = "INSERT INTO favorites (participant_id, user_id) values (?, ?)";
 		int id = 0;
-		
-		try (Connection conn = getConn(); PreparedStatement query = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+		try (Connection conn = getConn();
+				PreparedStatement query = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 			query.setInt(1, favorite.getParticipant_id());
 			query.setInt(2, favorite.getUser_id());
-			
+
 			int rows = query.executeUpdate();
-			
+
 			if (rows > 0) {
-				try (ResultSet rs = query.getGeneratedKeys()){
+				try (ResultSet rs = query.getGeneratedKeys()) {
 					if (rs.next()) {
 						id = rs.getInt(1);
 						favorite.setId(id);
 					}
-					
+
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
 			}
 		}
 		return id;
-		
+
 	}
 
+	/**
+	 * Conexion with the database
+	 * 
+	 * @return
+	 */
 	public Connection getConn() {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -95,7 +119,6 @@ public class FavoritesDao {
 
 		Connection connection = null;
 		// Database connect
-		// Conectamos con la base de datos
 		try {
 			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020", "postgres",
 					"1234");

@@ -11,12 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.maycosas.eurovision.entities.Gala;
 
-
 @Repository
 public class GalaDao {
 	@Autowired
 	private GalaParticipantDao participantDao;
-	
+
+	/**
+	 * 
+	 * @return Select all data from Gala table
+	 * @throws SQLException
+	 */
 	public ArrayList<Gala> findAll() throws SQLException {
 
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
@@ -38,9 +42,12 @@ public class GalaDao {
 			}
 		}
 	}
-	
-	
 
+	/**
+	 * Conexion with the database
+	 * 
+	 * @return
+	 */
 	public Connection getConn() {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -50,10 +57,9 @@ public class GalaDao {
 
 		Connection connection = null;
 		// Database connect
-		// Conectamos con la base de datos
 		try {
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020",
-			        "postgres", "1234");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020", "postgres",
+					"1234");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,5 +68,5 @@ public class GalaDao {
 		return connection;
 
 	}
-	
+
 }

@@ -15,6 +15,11 @@ import com.maycosas.eurovision.entities.Country;
 @Repository
 public class CountryDao {
 
+	/**
+	 * 
+	 * @return Select all data from Country table
+	 * @throws SQLException
+	 */
 	public List<Country> findAllCountries() throws SQLException {
 
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
@@ -35,6 +40,12 @@ public class CountryDao {
 		}
 	}
 
+	/**
+	 * 
+	 * @param country_id
+	 * @return Select all data from an specific Country
+	 * @throws SQLException
+	 */
 	public Country findCountry(int country_id) throws SQLException {
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
 			try (ResultSet rs = query.executeQuery("SELECT * FROM country WHERE id = " + country_id)) {
@@ -51,6 +62,11 @@ public class CountryDao {
 		}
 	}
 
+	/**
+	 * Conexion with the database
+	 * 
+	 * @return
+	 */
 	public Connection getConn() {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -60,10 +76,9 @@ public class CountryDao {
 
 		Connection connection = null;
 		// Database connect
-		// Conectamos con la base de datos
 		try {
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020",
-			        "postgres", "1234");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020", "postgres",
+					"1234");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

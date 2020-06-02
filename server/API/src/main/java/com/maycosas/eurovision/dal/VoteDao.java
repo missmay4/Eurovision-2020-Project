@@ -16,10 +16,15 @@ import com.maycosas.eurovision.entities.Vote;
 
 @Repository
 public class VoteDao {
-	
+
 	@Autowired
 	private ParticipantDao partDao;
 
+	/**
+	 * 
+	 * @return Select all data from Vote table
+	 * @throws SQLException
+	 */
 	public List<Vote> findAllVotes() throws SQLException {
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
 			try (ResultSet rs = query.executeQuery("SELECT * FROM vote ORDER BY item_order ASC")) {
@@ -43,13 +48,20 @@ public class VoteDao {
 		}
 	}
 
+	/**
+	 * 
+	 * @param user_id
+	 * @return Select all data from an specific User with votes
+	 * @throws SQLException
+	 */
 	public ArrayList<Vote> findVoteUser(int user_id) throws SQLException {
 		ArrayList<Vote> votes = new ArrayList<Vote>();
 		String sql = "SELECT * FROM vote WHERE user_id = ? ORDER BY item_order ASC";
-		try (Connection conn = getConn(); PreparedStatement query = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-			
+		try (Connection conn = getConn();
+				PreparedStatement query = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
 			query.setInt(1, user_id);
-			
+
 			try (ResultSet rs = query.executeQuery()) {
 				while (rs.next()) {
 					Vote vote = new Vote();
@@ -71,22 +83,29 @@ public class VoteDao {
 		}
 	}
 
+	/**
+	 * 
+	 * @param vote
+	 * @return Insert votes into Vote table
+	 * @throws SQLException
+	 */
 	public int saveVote(Vote vote) throws SQLException {
 
 		String sql = "INSERT INTO vote (participant_id, user_id, item_order, gala_id, date_vote) values (?, ?, ?, ?, ?)";
 		int id = 0;
-		
-		try (Connection conn = getConn(); PreparedStatement query = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+		try (Connection conn = getConn();
+				PreparedStatement query = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 			query.setInt(1, vote.getParticipant_id());
 			query.setInt(2, vote.getUser_id());
 			query.setInt(3, vote.getItem_order());
 			query.setInt(4, vote.getGala_id());
 			query.setTimestamp(5, vote.getDate());
-			
+
 			int rows = query.executeUpdate();
-			
+
 			if (rows > 0) {
-				try (ResultSet rs = query.getGeneratedKeys()){
+				try (ResultSet rs = query.getGeneratedKeys()) {
 					if (rs.next()) {
 						id = rs.getInt(1);
 						vote.setId(id);
@@ -98,9 +117,14 @@ public class VoteDao {
 
 		}
 		return id;
-		
+
 	}
 
+	/**
+	 * Conexion with the database
+	 * 
+	 * @return
+	 */
 	public Connection getConn() {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -110,10 +134,9 @@ public class VoteDao {
 
 		Connection connection = null;
 		// Database connect
-		// Conectamos con la base de datos
 		try {
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020",
-			        "postgres", "1234");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020", "postgres",
+					"1234");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -122,13 +145,16 @@ public class VoteDao {
 		return connection;
 
 	}
-	
-	// COSAS NUEVAS 
-	// ------------------------------------------------------------------
-	public List<Vote> getOnlyVotes() throws SQLException{
+
+	/**
+	 * 
+	 * @return Select all data from vote table
+	 * @throws SQLException
+	 */
+	public List<Vote> getOnlyVotes() throws SQLException {
 		// TODO Auto-generated method stub
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
-			try (ResultSet rs = query.executeQuery("SELECT * FROM vote")){
+			try (ResultSet rs = query.executeQuery("SELECT * FROM vote")) {
 				List<Vote> totalVote = new ArrayList<>();
 				while (rs.next()) {
 					Vote vote = new Vote();
@@ -140,16 +166,12 @@ public class VoteDao {
 					vote.setDate(rs.getTimestamp("date_vote"));
 					vote.setParticipant(partDao.findParticipant(rs.getInt("participant_id")));
 
-					
 					totalVote.add(vote);
 				}
 				return totalVote;
 			}
 		}
-		
-	}
-	// ------------------------------------------------------------------
-	// FIN COSAS NUEVAS
 
-	
+	}
+
 }

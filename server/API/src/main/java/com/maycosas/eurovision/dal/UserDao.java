@@ -20,9 +20,9 @@ public class UserDao {
 	private VoteDao voteDao;
 
 	/**
-	 * Metodo para crear usuarios
 	 * 
 	 * @param user
+	 * @return Create a new user
 	 * @throws SQLException
 	 */
 	public int createUser(User user) throws SQLException {
@@ -50,7 +50,7 @@ public class UserDao {
 
 	/**
 	 * 
-	 * @return Metodo que devuelve una lista de usuarios
+	 * @return Select all data from user_ table
 	 * @throws SQLException
 	 */
 	public List<User> findAllUsers() throws SQLException {
@@ -76,7 +76,7 @@ public class UserDao {
 	/**
 	 * 
 	 * @param user_id
-	 * @return devuelve un usuario concreto segun el id
+	 * @return Select all data from an specific User
 	 * @throws SQLException
 	 */
 	public User findUser(int user_id) throws SQLException {
@@ -95,6 +95,12 @@ public class UserDao {
 		}
 	}
 
+	/**
+	 * 
+	 * @param name
+	 * @return Select all data from an specific user by name
+	 * @throws SQLException
+	 */
 	public User findUserName(String name) throws SQLException {
 		String sql = "SELECT * FROM user_ where name = ?";
 		try (Connection conn = getConn();
@@ -116,6 +122,11 @@ public class UserDao {
 		}
 	}
 
+	/**
+	 * Conexion with the database
+	 * 
+	 * @return
+	 */
 	public Connection getConn() {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -125,10 +136,9 @@ public class UserDao {
 
 		Connection connection = null;
 		// Database connect
-		// Conectamos con la base de datos
 		try {
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020",
-			        "postgres", "1234");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020", "postgres",
+					"1234");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

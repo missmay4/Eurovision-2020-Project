@@ -22,6 +22,11 @@ public class ParticipantDao {
 	@Autowired
 	private GalaParticipantDao galaParticipantDao;
 
+	/**
+	 * 
+	 * @return Select all data from Participant table
+	 * @throws SQLException
+	 */
 	public List<Participant> findAllParticipant() throws SQLException {
 
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
@@ -37,14 +42,13 @@ public class ParticipantDao {
 						participant.setSong(rs.getString("song"));
 						participant.setYear(rs.getInt("year"));
 						participant.setSong_link(rs.getString("song_link"));
-						participant.setLanguage(rs.getString("language"));					
+						participant.setLanguage(rs.getString("language"));
 						participant.setGala(galaP);
 
 						participants.add(participant);
-						
+
 					}
-					
-	
+
 				}
 
 				return participants;
@@ -52,11 +56,17 @@ public class ParticipantDao {
 		}
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return Select all data from an specific Participant
+	 * @throws SQLException
+	 */
 	public Participant findParticipant(int id) throws SQLException {
 
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
 			try (ResultSet rs = query.executeQuery("SELECT * FROM participant WHERE id = " + id)) {
-				
+
 				rs.next();
 				Participant participant = new Participant();
 				participant.setId(rs.getInt("id"));
@@ -73,6 +83,11 @@ public class ParticipantDao {
 		}
 	}
 
+	/**
+	 * Conexion with the database
+	 * 
+	 * @return
+	 */
 	public Connection getConn() {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -82,10 +97,9 @@ public class ParticipantDao {
 
 		Connection connection = null;
 		// Database connect
-		// Conectamos con la base de datos
 		try {
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020",
-			        "postgres", "1234");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020", "postgres",
+					"1234");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -94,9 +108,12 @@ public class ParticipantDao {
 		return connection;
 
 	}
-	
-	// COSAS NUEVAS
-	// ---------------------------------------------------------------------- Devuelve solo los participantes, sin gala
+
+	/**
+	 * 
+	 * @return Select all data from Participant table without gala
+	 * @throws SQLException
+	 */
 	public List<Participant> findOnlyParticipants() throws SQLException {
 
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
@@ -104,20 +121,19 @@ public class ParticipantDao {
 				List<Participant> participants = new ArrayList<>();
 
 				while (rs.next()) {
-						Participant participant = new Participant();
-						participant.setId(rs.getInt("id"));
-						participant.setCountry(countriesDao.findCountry(rs.getInt("country_id")));
-						participant.setName(rs.getString("name"));
-						participant.setSong(rs.getString("song"));
-						participant.setYear(rs.getInt("year"));
-						participant.setSong_link(rs.getString("song_link"));
-						participant.setLanguage(rs.getString("language"));	
-						participants.add(participant);
+					Participant participant = new Participant();
+					participant.setId(rs.getInt("id"));
+					participant.setCountry(countriesDao.findCountry(rs.getInt("country_id")));
+					participant.setName(rs.getString("name"));
+					participant.setSong(rs.getString("song"));
+					participant.setYear(rs.getInt("year"));
+					participant.setSong_link(rs.getString("song_link"));
+					participant.setLanguage(rs.getString("language"));
+					participants.add(participant);
 				}
 
 				return participants;
 			}
 		}
 	}
-	// ----------------------------------------------------------------------
 }

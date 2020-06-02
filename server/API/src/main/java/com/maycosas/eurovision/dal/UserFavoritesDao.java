@@ -20,6 +20,12 @@ public class UserFavoritesDao {
 	@Autowired
 	private FavoritesDao favDao;
 
+	/**
+	 * 
+	 * @param user
+	 * @return Create a new user to save Favorites
+	 * @throws SQLException
+	 */
 	public int createUserFavorites(UserFavorites user) throws SQLException {
 		String sql = "INSERT INTO user_favorites (user_name, user_country) values (?, ?)";
 		int id = 0;
@@ -44,6 +50,11 @@ public class UserFavoritesDao {
 
 	}
 
+	/**
+	 * 
+	 * @return Select all data from user_favorites table
+	 * @throws SQLException
+	 */
 	public List<UserFavorites> findUsersFavorites() throws SQLException {
 
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
@@ -66,6 +77,12 @@ public class UserFavoritesDao {
 
 	}
 
+	/**
+	 * 
+	 * @param user_id
+	 * @return Select all data from an specific User with favorites
+	 * @throws SQLException
+	 */
 	public UserFavorites findUserFavorites(int user_id) throws SQLException {
 		try (Connection conn = getConn(); Statement query = conn.createStatement()) {
 			try (ResultSet rs = query.executeQuery("SELECT * FROM user_favorites WHERE id = " + user_id)) {
@@ -83,6 +100,12 @@ public class UserFavoritesDao {
 		}
 	}
 
+	/**
+	 * 
+	 * @param name
+	 * @return Select all data from an specific user with favorites by name
+	 * @throws SQLException
+	 */
 	public UserFavorites findUserFavoritesUsername(String name) throws SQLException {
 		String sql = "SELECT * FROM user_favorites where user_name = ?";
 		try (Connection conn = getConn();
@@ -103,7 +126,13 @@ public class UserFavoritesDao {
 			}
 		}
 	}
-	
+
+	/**
+	 * 
+	 * @param country
+	 * @return Select all data from an specific user with favorites by country
+	 * @throws SQLException
+	 */
 	public UserFavorites findUserFavoritesCountry(String country) throws SQLException {
 		String sql = "SELECT * FROM user_favorites where user_country = ?";
 		try (Connection conn = getConn();
@@ -125,6 +154,11 @@ public class UserFavoritesDao {
 		}
 	}
 
+	/**
+	 * Conexion with the database
+	 * 
+	 * @return
+	 */
 	public Connection getConn() {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -134,7 +168,6 @@ public class UserFavoritesDao {
 
 		Connection connection = null;
 		// Database connect
-		// Conectamos con la base de datos
 		try {
 			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/eurovision2020", "postgres",
 					"1234");

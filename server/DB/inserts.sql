@@ -63,7 +63,7 @@ insert into participant (country_id, name, song, year, song_link, language) valu
 	((select id from country where name = 'Spain'), 'Blas Cantó', 'Universo', 2020, 'https://youtu.be/zuDdex1st-Y', 'Spanish'),
 	((select id from country where name = 'Estonia'), 'Uku Suviste', 'What Love Is', 2020, 'https://youtu.be/3EIQ6U039ms', 'English'),
 	((select id from country where name = 'Finland'), '	Aksel Kankaanranta', 'Looking Back', 2020, 'https://youtu.be/EgONBKFQpxE', 'English'),
-	((select id from country where name = 'France'), 'Tom Leeb', 'Mon Alliée (The Best in Me)', 2020, 'https://youtu.be/D02Xlo_LfRU', 'French & English'),
+	((select id from country where name = 'France'), 'Tom Leeb', 'Mon Alliée (The Best in Me)', 2020, 'https://youtu.be/J5SOdhXjYko', 'French & English'),
 	((select id from country where name = 'Georgia'), 'Tornike Kipiani', 'Take Me As I Am', 2020, 'https://youtu.be/LjNK4Xywjc4', 'English, Italian, Spanish, Frecnh & German'),
 	((select id from country where name = 'Greece'), 'Stefania Liberakakis', 'Superg!rl', 2020, 'https://youtu.be/dJxCINWp_j0', 'English'),
 	((select id from country where name = 'Ireland'), 'Lesley Roy', 'Story Of My Life', 2020, 'https://youtu.be/HLgE0Ayl5Hc', 'English'),

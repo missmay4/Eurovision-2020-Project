@@ -1,7 +1,7 @@
 package com.maycosas.eurovision.entities;
 
 public class Country {
-	
+
 	private String name;
 	private String code;
 	private int id;

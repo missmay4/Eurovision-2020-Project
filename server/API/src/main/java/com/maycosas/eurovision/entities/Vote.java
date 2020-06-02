@@ -10,7 +10,19 @@ public class Vote {
 	private int gala_id;
 	private Timestamp date;
 	Participant participant;
-	
+
+	public Vote() {
+
+	}
+
+	public Vote(int participant_id, int user_id, int item_order, int gala, Timestamp date) {
+		this.participant_id = participant_id;
+		this.user_id = user_id;
+		this.item_order = item_order;
+		this.gala_id = gala;
+		this.date = date;
+	}
+
 	public Participant getParticipant() {
 		return participant;
 	}
@@ -33,18 +45,6 @@ public class Vote {
 
 	public void setDate(Timestamp timestamp) {
 		this.date = timestamp;
-	}
-
-	public Vote() {
-		
-	}
-
-	public Vote(int participant_id, int user_id, int item_order, int gala, Timestamp date) {
-		this.participant_id = participant_id;
-		this.user_id = user_id;
-		this.item_order = item_order;
-		this.gala_id = gala;
-		this.date = date;
 	}
 
 	public int getId() {

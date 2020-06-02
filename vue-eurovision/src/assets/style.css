@@ -34,7 +34,7 @@ a:focus {
   font-weight: bold;
 }
 
-a: visited {
+a:visited {
   color: var(--c-medium);
 }
 
@@ -209,5 +209,8 @@ th {
 } */
 .titles {
   color: #224488;
-  padding-top: 2em;
+  padding-top: 1em;
+}
+.par1{
+  padding-top: 5%;
 }

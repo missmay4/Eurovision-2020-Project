@@ -15,18 +15,24 @@ import com.maycosas.eurovision.bll.FavoritesService;
 
 @RestController
 public class FavoritesController {
+
 	@Autowired
 	private FavoritesService favoriteService;
-	
+
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/favorites/")
+	/**
+	 * 
+	 * @return JSON with Favorites data
+	 */
 	public Object getAllFavorites() {
 		try {
 			return favoriteService.getFavorites();
 		} catch (NoSuchElementException nsee) {
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-			// TODO: handle exception
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -35,5 +41,4 @@ public class FavoritesController {
 			return new ResponseEntity<>(sStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-
 }

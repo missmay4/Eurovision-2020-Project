@@ -26,17 +26,22 @@ public class UserController {
 	private UserService userService;
 	@Autowired
 	private VoteService voteService;
-	
+
 	// (origins = "http://localhost:8000")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/user/")
+	/**
+	 * 
+	 * @return JSON with User data
+	 */
 	public Object getUsers() {
 		try {
 			return userService.getAllUsers();
 		} catch (NoSuchElementException nsee) {
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -46,23 +51,28 @@ public class UserController {
 		}
 
 	}
-	
- // (origins = "http://localhost:8000")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+
+	// (origins = "http://localhost:8000")
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/user/")
+	/**
+	 * 
+	 * @param name
+	 * @return Create a new user
+	 */
 	public Object createUser(@RequestParam(value = "name", required = true) String name) {
 		try {
 			if (userService.getUserName(name) == null) {
 				return userService.createUser(name);
 			} else {
+				// HTTP 409 - Username already exists
 				return new ResponseEntity<>(HttpStatus.CONFLICT);
 			}
-			
-			
 		} catch (NoSuchElementException nsee) {
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -70,17 +80,23 @@ public class UserController {
 
 			return new ResponseEntity<>(sStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/user/{id}")
+	/**
+	 * 
+	 * @param id
+	 * @return Specific User data
+	 */
 	public Object getUser(@PathVariable String id) {
 		try {
 			return userService.getUser(Integer.parseInt(id));
 		} catch (NoSuchElementException nsee) {
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -90,7 +106,17 @@ public class UserController {
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/user/{id}/vote")
+	/**
+	 * 
+	 * @param id
+	 * @param participant1
+	 * @param participant2
+	 * @param participant3
+	 * @param gala
+	 * @return Create new Votes into an specific user
+	 */
 	public Object vote(@PathVariable String id, @RequestParam(value = "vote1", required = true) int participant1,
 			@RequestParam(value = "vote2", required = true) int participant2,
 			@RequestParam(value = "vote3", required = true) int participant3,
@@ -106,7 +132,7 @@ public class UserController {
 				voteService.saveVote(vote2);
 				Vote vote3 = new Vote(participant3, user.getId(), 2, gala, date);
 				voteService.saveVote(vote3);
-				
+
 				ArrayList<Vote> votes = new ArrayList<Vote>();
 				votes.add(vote1);
 				votes.add(vote2);
@@ -117,16 +143,15 @@ public class UserController {
 				return user;
 
 			} else {
-				// Devuelve un 409
+				// HTTP 409
 				return new ResponseEntity<>(HttpStatus.CONFLICT);
-
 			}
 
 		} catch (NoSuchElementException nsee) {
-
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -134,7 +159,5 @@ public class UserController {
 
 			return new ResponseEntity<>(sStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
 	}
-
 }

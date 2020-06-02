@@ -17,17 +17,22 @@ import com.maycosas.eurovision.bll.VoteService;
 public class VoteController {
 	@Autowired
 	private VoteService voteService;
-	
+
 	// (origins = "http://localhost:8000")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/votes/")
+	/**
+	 * 
+	 * @return JSON with Votes data
+	 */
 	public Object getAllVotes() {
 		try {
 			return voteService.getVotes();
 		} catch (NoSuchElementException nsee) {
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -35,7 +40,5 @@ public class VoteController {
 
 			return new ResponseEntity<>(sStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
 	}
-	
 }

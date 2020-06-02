@@ -30,13 +30,18 @@ public class UserFavoritesController {
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/user_favorites/")
-	public Object getRegisteredUsers() {
+	/**
+	 * 
+	 * @return JSON with User who saved favorites
+	 */
+	public Object getUserFavorites() {
 		try {
 			return userFService.getAllUsersFavorites();
 		} catch (NoSuchElementException nsee) {
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-			// TODO: handle exception
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -49,20 +54,28 @@ public class UserFavoritesController {
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/user_favorites/")
-	public Object createRegisteredUser(@RequestParam(value = "username", required = true) String username,
+	/**
+	 * 
+	 * @param username
+	 * @param country
+	 * @return Create new user to save favorites
+	 */
+	public Object createUserFavorites(@RequestParam(value = "username", required = true) String username,
 			@RequestParam(value = "country", required = true) String country) {
 		try {
 			if (userFService.getFavoritesUsername(username) == null
 					&& userFService.getFavoritesCountry(country) == null) {
 				return userFService.createUserFavorites(username, country);
 			} else {
+				// HTTP 409
 				return new ResponseEntity<>(HttpStatus.CONFLICT);
 			}
 
 		} catch (NoSuchElementException nsee) {
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-			// TODO: handle exception
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -72,14 +85,21 @@ public class UserFavoritesController {
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/user_favorites/{id}")
-	public Object getRegisteredUser(@PathVariable String id) {
+	/**
+	 * 
+	 * @param id
+	 * @return Specific User with favorites data
+	 */
+	public Object getUserFavorites(@PathVariable String id) {
 		try {
 			return userFService.getUserFavorites(Integer.parseInt(id));
 		} catch (NoSuchElementException nsee) {
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-			// TODO: handle exception
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -88,11 +108,28 @@ public class UserFavoritesController {
 			return new ResponseEntity<>(sStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/user_favorites/{id}/favorites")
-	public Object saveFavorites(@PathVariable String id, @RequestParam(value = "favorite1", required = true) int favorite1,
+	/**
+	 * 
+	 * @param id
+	 * @param favorite1
+	 * @param favorite2
+	 * @param favorite3
+	 * @param favorite4
+	 * @param favorite5
+	 * @param favorite6
+	 * @param favorite7
+	 * @param favorite8
+	 * @param favorite9
+	 * @param favorite10
+	 * @return Create new Favorites into an specific user with favorites
+	 */
+	public Object saveFavorites(@PathVariable String id,
+			@RequestParam(value = "favorite1", required = true) int favorite1,
 			@RequestParam(value = "favorite2", required = true) int favorite2,
-			@RequestParam(value = "favorite3", required = true) int favorite3, 
+			@RequestParam(value = "favorite3", required = true) int favorite3,
 			@RequestParam(value = "favorite4", required = true) int favorite4,
 			@RequestParam(value = "favorite5", required = true) int favorite5,
 			@RequestParam(value = "favorite6", required = true) int favorite6,
@@ -142,16 +179,14 @@ public class UserFavoritesController {
 				return user;
 
 			} else {
-				// Devuelve un 409
+				// HTTP 409
 				return new ResponseEntity<>(HttpStatus.CONFLICT);
-
 			}
-
 		} catch (NoSuchElementException nsee) {
-
+			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
-
+			// HTTP 500
 			StringWriter sw = new StringWriter();
 			PrintWriter pw = new PrintWriter(sw);
 			e.printStackTrace(pw);
@@ -159,7 +194,5 @@ public class UserFavoritesController {
 
 			return new ResponseEntity<>(sStackTrace, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
 	}
-
 }

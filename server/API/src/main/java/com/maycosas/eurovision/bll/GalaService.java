@@ -15,6 +15,11 @@ public class GalaService {
 	@Autowired
 	private GalaDao galaDao;
 
+	/**
+	 * 
+	 * @return find all galas data
+	 * @throws SQLException
+	 */
 	public ArrayList<Gala> getAll() throws SQLException {
 
 		return galaDao.findAll();

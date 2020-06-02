@@ -11,39 +11,51 @@ import com.maycosas.eurovision.entities.User;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
-	private UserDao dao; 
+	private UserDao dao;
+
 	/**
-	 * @return devuelve una lista con todos los usuarios
+	 * @return list with all users
 	 * @throws SQLException
 	 */
 	public List<User> getAllUsers() throws SQLException {
 
 		return dao.findAllUsers();
 	}
-	
+
 	/**
 	 * 
 	 * @param user_id
-	 * @return devuelve un usuario especifico introducido por id
+	 * @return specific user by id
 	 * @throws SQLException
 	 */
-	
 	public User getUser(int user_id) throws SQLException {
 		return dao.findUser(user_id);
 	}
-	
-	public User getUserName (String name) throws SQLException {
+
+	/**
+	 * 
+	 * @param name
+	 * @return username from users with votes
+	 * @throws SQLException
+	 */
+	public User getUserName(String name) throws SQLException {
 		return dao.findUserName(name);
 	}
-	
+
+	/**
+	 * 
+	 * @param name
+	 * @return new user for votes
+	 * @throws SQLException
+	 */
 	public User createUser(String name) throws SQLException {
 		User user = new User();
 		user.setName(name);
 		dao.createUser(user);
-		
+
 		return user;
 	}
-	
+
 }

@@ -16,7 +16,7 @@ public class VoteService {
 	private VoteDao dao;
 
 	/**
-	 * Metodo para guardar los votos 
+	 * Save the votes
 	 * @param vote
 	 * @throws SQLException
 	 */
@@ -26,7 +26,7 @@ public class VoteService {
 	}
 	
 	/**
-	 * @return devuelve una lista con todos los votos
+	 * @return list with all the votes
 	 * @throws SQLException
 	 */
 	public List<Vote> getVotes() throws SQLException {

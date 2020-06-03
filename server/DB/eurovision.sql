@@ -44,7 +44,7 @@ create table galaParticipant (
 -- User table 
 create table user_ (
 	id serial primary key, 
-	name varchar(20) unique
+	name varchar(20) -- unique
 )
 
 -- Vote table

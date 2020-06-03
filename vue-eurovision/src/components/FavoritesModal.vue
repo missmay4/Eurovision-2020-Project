@@ -168,7 +168,7 @@ export default {
             });
 
           console.log(response.data);
-          alert("Usuario " + this.username + "ha guardado sus votos");
+          alert(this.username + " you have saved your favorites");
         })
         .catch((error) => {
           // handle error

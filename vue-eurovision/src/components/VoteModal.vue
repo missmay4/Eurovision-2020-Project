@@ -7,24 +7,14 @@
         </div>
         <div class="modal-body">
           <!-- Votos  -->
-          <imageCountry
-            v-for="participant in participants.filter((participant) => {
+          <imageCountry v-for="participant in participants.filter((participant) => {
               return selectedParticipants.indexOf(participant.id) !== -1;
-            })"
-            :participant="participant"
-            v-bind:key="participant.id"
-          />
+            })" :participant="participant" v-bind:key="participant.id" />
           <form action>
             <div class="form-group row">
               <div class="col-sm-12">
-                <input
-                  type="name"
-                  class="marg"
-                  required
-                  v-bind:class="{ 'form-control': true, 'is-invalid': !valido }"
-                  placeholder="Tu nombre"
-                  v-model="name"
-                />
+                <input type="name" class="marg" required v-bind:class="{ 'form-control': true, 'is-invalid': !valido }"
+                  placeholder="Tu nombre" v-model="name" />
                 <div class="invalid-feedback">El usuario ya existe</div>
               </div>
             </div>
@@ -42,63 +32,66 @@
 </template>
 
 <script>
-import imageCountry from "@/components/imageCountry.vue";
-import axios from "axios";
+  import imageCountry from "@/components/imageCountry.vue";
+  import axios from "axios";
 
-export default {
-  name: "VoteModal",
-  props: {
-    selectedParticipants: Array,
-    participants: Array,
-  },
-  data() {
-    return {
-      name: "",
-      valido: true,
-    };
-  },
-  methods: {
-    vote: function() {
-      const config = {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      };
-      let form_user = new FormData();
-      form_user.append("name", this.name);
-
-      let form_votes = new FormData();
-      form_votes.append("vote1", this.selectedParticipants[0]);
-      form_votes.append("vote2", this.selectedParticipants[1]);
-      form_votes.append("vote3", this.selectedParticipants[2]);
-      form_votes.append("gala", 1);
-
-      axios
-        .post("http://localhost:8080/user/", form_user)
-        .then((response) => {
-          axios
-            .post(
-              "http://localhost:8080/user/" + response.data.id + "/vote",
-              form_votes
-            )
-            .then((response) => {
-              this.valido = true;
-            });
-        })
-        .catch((error) => {
-          // handle error
-          this.valido = false;
-        });
+  export default {
+    name: "VoteModal",
+    props: {
+      selectedParticipants: Array,
+      participants: Array,
     },
-  },
-  components: {
-    imageCountry,
-  },
-};
+    data() {
+      return {
+        name: "",
+        valido: true,
+      };
+    },
+    methods: {
+      vote: function () {
+        const config = {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        };
+        let form_user = new FormData();
+        form_user.append("name", this.name);
+
+        let form_votes = new FormData();
+        form_votes.append("vote1", this.selectedParticipants[0]);
+        form_votes.append("vote2", this.selectedParticipants[1]);
+        form_votes.append("vote3", this.selectedParticipants[2]);
+        form_votes.append("gala", 1);
+
+        axios
+          .post("http://localhost:8080/user/", form_user)
+          .then((response) => {
+            axios
+              .post(
+                "http://localhost:8080/user/" + response.data.id + "/vote",
+                form_votes
+              )
+              .then((response) => {
+                this.valido = true;
+              });
+
+            console.log(response.data);
+            alert(this.name + " you have saved your votes");
+          })
+          .catch((error) => {
+            // handle error
+            this.valido = false;
+          });
+      },
+    },
+    components: {
+      imageCountry,
+    },
+  };
 </script>
 
 <style scoped>
-.marg {
-  margin-top: 10px;
-}
+  .marg {
+    margin-top: 10px;
+  }
 </style>

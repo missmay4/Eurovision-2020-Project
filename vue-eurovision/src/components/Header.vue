@@ -36,9 +36,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a
-          href="https://open.spotify.com/playlist/2GAHVbzeg2z6p5roXVayDe?si=XwW_VGJ4Q6-vP6EaMfynog"
-        >
+        <a href="https://open.spotify.com/playlist/2GAHVbzeg2z6p5roXVayDe?si=XwW_VGJ4Q6-vP6EaMfynog">
           <i class="fa fa-spotify fa-lg" aria-hidden="true"></i>
         </a>
       </li>
@@ -48,7 +46,14 @@
         </a>
       </li>-->
     </ul>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col lg-12">
+        <img src="../assets/euro_logo.jpeg" alt />
+
+      </div>
+    </div>
   </header>
+
 </template>
 
 <style></style>

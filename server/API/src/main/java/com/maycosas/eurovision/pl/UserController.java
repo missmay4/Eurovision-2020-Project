@@ -62,12 +62,13 @@ public class UserController {
 	 */
 	public Object createUser(@RequestParam(value = "name", required = true) String name) {
 		try {
-			if (userService.getUserName(name) == null) {
+			return userService.createUser(name); // No tiene en cuenta si el nombre se repite, para que se pueda votar varias veces con el mimso nombre en las diferentes galas
+			/* if (userService.getUserName(name) == null) {
 				return userService.createUser(name);
 			} else {
 				// HTTP 409 - Username already exists
 				return new ResponseEntity<>(HttpStatus.CONFLICT);
-			}
+			} */
 		} catch (NoSuchElementException nsee) {
 			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

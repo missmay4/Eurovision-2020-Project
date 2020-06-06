@@ -16,7 +16,7 @@
         :src="loadImage('EuroFlags/Euro' + participant.country.code + '.png')"
         :alt="'Euro' + participant.country.code"
       >
-      <p class="nombrePais">{{participant.country.name}}</p>
+      <p class="countryName">{{participant.country.name}}</p>
     </div>
   </div>
 </template>
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style scoped>
-.nombrePais {
+.countryName {
   display: inline-block;
   margin-left: 10px;
 }

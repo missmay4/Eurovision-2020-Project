@@ -4,7 +4,7 @@
 
 <script>
 // @ is an alias to /src
-import tablaMasVotados from "@/components/tablaMasVotados.vue";
+import tablaMasVotados from "@/components/mostVotedTable.vue";
 
 export default {
   name: "moreVoted",

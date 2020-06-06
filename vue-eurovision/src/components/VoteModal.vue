@@ -61,7 +61,7 @@
         form_votes.append("vote1", this.selectedParticipants[0]);
         form_votes.append("vote2", this.selectedParticipants[1]);
         form_votes.append("vote3", this.selectedParticipants[2]);
-        form_votes.append("gala", 1);
+        form_votes.append("gala", this.participants[0].gala.gala_id);
 
         axios
           .post("http://localhost:8080/user/", form_user)

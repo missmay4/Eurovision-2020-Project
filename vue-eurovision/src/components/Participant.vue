@@ -21,7 +21,7 @@
             </h5>
           </div>
         </div>
-        <h6 class="card-title cardFont noMargin">{{ name }}</h6>
+        <h6 class="card-title cardFont noMargin">{{ name }} - {{songName}} </h6>
         <a :href="songLink" target="_blank" class="card-title"
           >Listen the song!</a
         >
@@ -61,6 +61,7 @@ export default {
     country: String,
     countryCode: String,
     songLink: String,
+    songName: String,
     checked: Array,
     disabled: Boolean,
   },
@@ -102,6 +103,6 @@ export default {
 }
 
 .myInput {
-  margin-left: 14%;
+  margin-left: 2%;
 }
 </style>

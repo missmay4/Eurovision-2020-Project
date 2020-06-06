@@ -1,5 +1,5 @@
 <template>
-  <div class="votonCentrado">
+  <div class="centeredButton">
     <div class="col-md-12">
       <button
         type="button"
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.votonCentrado {
+.centeredButton {
   text-align: center;
   margin-top: 20px;
 }

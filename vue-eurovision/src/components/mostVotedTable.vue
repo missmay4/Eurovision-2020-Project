@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Total votes of our APP</h1>
+    <h1 class="titles display-4">Total votes</h1>
     <p>
       In here, you can check the total count of the votes in our app. The number
       is the total times a country has been voted in semifinals and finals.
@@ -44,7 +44,7 @@ import winnersTable2 from "@/components/winnersTable2.vue";
 import axios from "axios";
 
 export default {
-  name: "tablaMasVotados",
+  name: "mostVotedTable ",
   data() {
     return {
       usuarios: [],

@@ -3,7 +3,7 @@
     <h1>Favorites</h1>
    <div class="row no-gutters">
         <UserFavorites
-          v-for="usuario in usuarios"
+          v-for="usuario in users"
           :usuario="usuario"
           v-bind:key="usuario.username"
         />
@@ -19,12 +19,12 @@ export default {
   name: "listFavorites",
   data() {
     return {
-      usuarios: [],
+      users: [],
     };
   },
   mounted() {
     axios.get("http://localhost:8080/user_favorites/").then((response) => {
-      this.usuarios= response.data;
+      this.users= response.data;
       console.log(response.data);
     });
   },

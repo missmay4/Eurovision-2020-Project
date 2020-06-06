@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Voting</h1>
+    <h1 class="titles display-4">Voting</h1>
+    <div class="table-responsive">
     <table class="table">
       <thead>
         <tr>
@@ -19,6 +20,7 @@
         />
       </tbody>
     </table>
+    </div>
   </div>
 </template>
 
@@ -27,7 +29,7 @@ import FinalVotes from "@/components/FinalVotes.vue";
 import axios from "axios";
 
 export default {
-  name: "tablaVotos",
+  name: "votesTable",
   data() {
     return {
       usuarios: [],

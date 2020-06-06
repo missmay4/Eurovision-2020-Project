@@ -63,8 +63,7 @@ public class UserFavoritesController {
 	public Object createUserFavorites(@RequestParam(value = "username", required = true) String username,
 			@RequestParam(value = "country", required = true) String country) {
 		try {
-			if (userFService.getFavoritesUsername(username) == null
-					&& userFService.getFavoritesCountry(country) == null) {
+			if (userFService.getFavoritesUsername(username) == null) {
 				return userFService.createUserFavorites(username, country);
 			} else {
 				// HTTP 409

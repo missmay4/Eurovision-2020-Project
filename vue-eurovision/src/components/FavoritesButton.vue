@@ -6,9 +6,7 @@
         class="btn btn-danger btn-block"
         @click="showModal"
         :disabled="disabled"
-      >
-        Save your favorites
-      </button>
+      >Guardar favoritos</button>
       <FavoritesModal
         :selectedParticipants="selectedParticipants"
         :participants="participants"
@@ -26,17 +24,17 @@ export default {
   props: {
     disabled: Boolean,
     selectedParticipants: Array,
-    participants: Array,
+    participants: Array
   },
   methods: {
     showModal() {
       let element = this.$refs.modal.$el;
       $(element).modal("show");
-    },
+    }
   },
   components: {
-    FavoritesModal,
-  },
+    FavoritesModal
+  }
 };
 </script>
 

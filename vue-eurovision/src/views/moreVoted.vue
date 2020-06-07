@@ -1,15 +1,15 @@
 <template>
-  <tablaMasVotados />
+  <mostVotedTable />
 </template>
 
 <script>
 // @ is an alias to /src
-import tablaMasVotados from "@/components/mostVotedTable.vue";
+import mostVotedTable from "@/components/mostVotedTable.vue";
 
 export default {
   name: "moreVoted",
   components: {
-    tablaMasVotados
+    mostVotedTable
   }
 };
 </script>

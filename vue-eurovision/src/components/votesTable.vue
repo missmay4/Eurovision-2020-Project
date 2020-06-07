@@ -1,25 +1,25 @@
 <template>
   <div>
-    <h1 class="titles display-4">Voting</h1>
+    <h1 class="title display-4">Votos</h1>
     <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col" class="nombre">Name</th>
-          <th scope="col">Gala</th>
-          <th scope="col">Option 1</th>
-          <th scope="col">Option 2</th>
-          <th scope="col">Option 3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <FinalVotes
-          v-for="usuario in usuarios"
-          :usuario="usuario"
-          v-bind:key="usuario.name"
-        />
-      </tbody>
-    </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="nombre">Nombre</th>
+            <th scope="col">Gala</th>
+            <th scope="col">Opción 1</th>
+            <th scope="col">Opción 2</th>
+            <th scope="col">Opción 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <FinalVotes
+            v-for="usuario in usuarios"
+            :usuario="usuario"
+            v-bind:key="usuario.id"
+          />
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -39,6 +39,7 @@ export default {
   mounted() {
     axios.get("http://localhost:8080/user/").then((response) => {
       this.usuarios = response.data;
+      //console.log(response.data);
     });
   },
   components: {
@@ -50,5 +51,8 @@ export default {
 <style lang="css" scoped>
 .nombre {
   color: #273b75;
+}
+.title {
+  color: #224488;
 }
 </style>

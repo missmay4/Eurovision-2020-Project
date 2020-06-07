@@ -3,10 +3,10 @@
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
-          <h6 class="modal-title">Your favorites</h6>
+          <h6 class="modal-title">Tus favoritos</h6>
         </div>
         <div class="modal-body">
-          <!-- Votos  -->
+          <!-- Favoritos  -->
           <imageCountry
             v-for="participant in participants.filter((participant) => {
               return selectedParticipants.indexOf(participant.id) !== -1;
@@ -22,15 +22,17 @@
                   class="marg"
                   required
                   v-bind:class="{ 'form-control': true, 'is-invalid': !valido }"
-                  placeholder="Your name"
+                  placeholder="Introduce tu nombre"
                   v-model="username"
                 />
-                <div class="invalid-feedback">This user already exists</div>
+                <div class="invalid-feedback">
+                  Este usuario ya ha guardado favoritos
+                </div>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-sm-12">
-                <label for="country">Select your country</label>
+                <label for="country">Selecciona tu país</label>
                 <select
                   id="country"
                   name="country"
@@ -39,57 +41,49 @@
                   v-model="country"
                 >
                   <option value="AL">Albania</option>
+                  <option value="DE">Alemania</option>
                   <option value="AM">Armenia</option>
                   <option value="AU">Australia</option>
                   <option value="AT">Austria</option>
-                  <option value="AZ">Azerbaijan</option>
-                  <option value="BY">Belarus</option>
-                  <option value="BE">Belgium</option>
+                  <option value="AZ">Azerbaiyán</option>
+                  <option value="BE">Bélgica</option>
+                  <option value="BY">Bielorrusia</option>
                   <option value="BG">Bulgaria</option>
-                  <option value="HR">Croatia</option>
-                  <option value="CY">Cyprus</option>
-                  <option value="CZ">Czech Republic</option>
-                  <option value="DK">Denmark</option>
+                  <option value="CY">Chipre</option>
+                  <option value="HR">Croacia</option>
+                  <option value="DK">Dinamarca</option>
+                  <option value="SI">Eslovenia</option>
+                  <option value="ES">España</option>
                   <option value="EE">Estonia</option>
-                  <option value="FI">Finland</option>
-                  <option value="FR">France</option>
+                  <option value="FI">Finlandia</option>
+                  <option value="FR">Francia</option>
                   <option value="GE">Georgia</option>
-                  <option value="DE">Germany</option>
-                  <option value="GR">Greece</option>
-                  <option value="HU">Hungary</option>
-                  <option value="IS">Iceland</option>
-                  <option value="IE">Ireland</option>
+                  <option value="GR">Grecia</option>
+                  <option value="HU">Hungría</option>
+                  <option value="IE">Irlanda</option>
+                  <option value="IS">Islandia</option>
                   <option value="IL">Israel</option>
-                  <option value="IT">Italy</option>
-                  <option value="LV">Latvia</option>
-                  <option value="LT">Lithuania</option>
-                  <option value="MK"
-                    >Macedonia, The Former Yugoslav Republic of</option
-                  >
-                  <option value="MD">Moldova, Republic of</option>
+                  <option value="IT">Italia</option>
+                  <option value="LV">Letonia</option>
+                  <option value="LT">Lituania</option>
+                  <option value="MK">Macedonia del Norte</option>
+                  <option value="MD">Malta</option>
+                  <option value="MD">Moldavia</option>
                   <option value="ME">Montenegro</option>
-                  <option value="NL">Netherlands</option>
-                  <option value="NO">Norway</option>
-                  <option value="PL">Poland</option>
+                  <option value="NO">Noruega</option>
+                  <option value="NL">Países Bajos</option>
+                  <option value="PL">Polonia</option>
                   <option value="PT">Portugal</option>
-                  <option value="RO">Romania</option>
-                  <option value="RU">Russian Federation</option>
+                  <option value="GB">Reino Unido</option>
+                  <option value="CZ">República Checa</option>
+                  <option value="RO">Rumania</option>
+                  <option value="RU">Rusia</option>
                   <option value="SM">San Marino</option>
                   <option value="RS">Serbia</option>
-                  <option value="SI">Slovenia</option>
-                  <option value="ES">Spain</option>
-                  <option value="SE">Sweden</option>
-                  <option value="CH">Switzerland</option>
-                  <option value="UA">Ukraine</option>
-                  <option value="GB">United Kingdom</option>
+                  <option value="SE">Suecia</option>
+                  <option value="CH">Suiza</option>
+                  <option value="UA">Ucrania</option>
                 </select>
-                <!-- <input
-                  type="text"
-                  class="marg"
-                  required
-                  placeholder="Your country"
-                  v-model="country"
-                /> -->
               </div>
             </div>
           </form>
@@ -100,9 +94,8 @@
             class="btn btn-primary"
             data-dismiss="modal"
           >
-            Save favorites!
+            Guardar favoritos
           </button>
-          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button> -->
         </div>
       </div>
     </div>
@@ -128,12 +121,6 @@ export default {
   },
   methods: {
     favorites: function() {
-      const config = {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      };
-
       let form_user = new FormData();
       form_user.append("username", this.username);
       form_user.append("country", this.country);
@@ -152,22 +139,28 @@ export default {
 
       axios({
         method: "post",
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
         url: "http://localhost:8080/user_favorites/",
         data: form_user,
       })
         .then((response) => {
-          axios
-            .post(
+          axios({
+            method: "post",
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+            url:
               "http://localhost:8080/user_favorites/" +
-                response.data.id +
-                "/favorites",
-              form_votes
-            )
-            .then((response) => {
-              this.valido = true;
-            });
+              response.data.id +
+              "/favorites",
+            data: form_votes,
+          }).then((response) => {
+            this.valido = true;
+          });
 
-          console.log(response.data);
+          //console.log(response.data);
           alert(this.username + " you have saved your favorites");
         })
         .catch((error) => {

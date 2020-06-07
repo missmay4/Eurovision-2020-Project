@@ -21,9 +21,10 @@
             </h5>
           </div>
         </div>
-        <h6 class="card-title cardFont noMargin">{{ name }} - {{songName}} </h6>
+        <h6 class="card-title cardFont noMargin">{{ name }}</h6>
+        <h6 class="card-title cardFont noMargin">{{ songName }}</h6>
         <a :href="songLink" target="_blank" class="card-title"
-          >Listen the song!</a
+          >Escucha la canción!</a
         >
         <!-- checkbox para guardar favoritos -->
         <div class="container">
@@ -36,7 +37,7 @@
               :disabled="disabled"
             />
             <h6 class="text">
-              Select as favorite
+              Seleccionar favorito
               <i class="fa fa-heart-o" aria-hidden="true"></i>
             </h6>
           </div>

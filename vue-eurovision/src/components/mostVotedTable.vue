@@ -1,15 +1,16 @@
 <template>
   <div>
-    <h1 class="titles display-4">Total votes</h1>
+    <h1 class="title display-4">Votos totales</h1>
     <p>
-      In here, you can check the total count of the votes in our app. The number
-      is the total times a country has been voted in semifinals and finals.
+      Aqui, puedes ver los votos totales obtenidos por cada país dentro de
+      nuestra aplicación. El numero significa las veces que un país ha sido
+      votado, tanto en Semifinales como en la Final.
     </p>
     <div class="row">
-      <table class="table col-md-6">
+      <table class="table col-sm-2 col-md-6 col-lg-6">
         <thead>
           <tr>
-            <th scope="col" class="nombre">Country</th>
+            <th scope="col" class="nombre">País</th>
             <!-- <th scope="col">Total votes</th> -->
           </tr>
         </thead>
@@ -18,11 +19,11 @@
           <!--<winnersTable v-for=" vote in totalVotes" :vote="vote" /> -->
         </tbody>
       </table>
-      <table class="table col-md-6">
+      <table class="table col-sm-6 col-md-6 col-lg-6">
         <thead>
           <tr>
             <!-- <th scope="col" class="nombre">Country</th> -->
-            <th scope="col">Total votes</th>
+            <th scope="col">Nº de votos</th>
           </tr>
         </thead>
         <tbody>
@@ -44,7 +45,7 @@ import winnersTable2 from "@/components/winnersTable2.vue";
 import axios from "axios";
 
 export default {
-  name: "mostVotedTable ",
+  name: "mostVotedTable",
   data() {
     return {
       usuarios: [],
@@ -118,5 +119,8 @@ export default {
 <style lang="css" scoped>
 .nombre {
   color: #273b75;
+}
+.title {
+  color: #224488;
 }
 </style>

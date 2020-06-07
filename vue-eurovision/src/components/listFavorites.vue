@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h1>Favorites</h1>
-   <div class="row no-gutters">
-        <UserFavorites
-          v-for="usuario in users"
-          :usuario="usuario"
-          v-bind:key="usuario.username"
-        />
+    <h1 class="title display-4">Favoritos</h1>
+    <div class="row no-gutters">
+      <UserFavorites
+        v-for="usuario in users"
+        :usuario="usuario"
+        v-bind:key="usuario.username"
+      />
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -24,8 +24,8 @@ export default {
   },
   mounted() {
     axios.get("http://localhost:8080/user_favorites/").then((response) => {
-      this.users= response.data;
-      console.log(response.data);
+      this.users = response.data;
+      //console.log(response.data);
     });
   },
   components: {
@@ -37,5 +37,8 @@ export default {
 <style lang="css" scoped>
 .nombre {
   color: #273b75;
+}
+.title {
+  color: #224488;
 }
 </style>

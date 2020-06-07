@@ -1,7 +1,7 @@
 <template>
   <div class="row mb">
     <div class="col-sm-12 col-md-12 col lg-12">
-      <img src="../assets/euro_logo.jpeg" alt />
+      <img class="mx-auto d-block img-fluid" src="../assets/euro_logo.jpeg" alt />
     </div>
   </div>
 </template>

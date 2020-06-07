@@ -1,53 +1,77 @@
 <template>
   <div class="container">
     <div class="header">
-      <img class="" src="../assets/Rotterdam/hero3.jpg" width = "100%" />
+      <h1 class="title display-4">Rotterdam 2020</h1>
     </div>
     <div class="row">
-    <div class="col"  md="6" offset-md="3" >
-     <p>
-       The Eurovision Song Contest 2020 was planned to be the 65th edition of the Eurovision Song Contest. 
-       The contest would have taken place in Rotterdam, Netherlands, following the country's victory at the 2019 contest in Tel Aviv, Israel, with the song "Arcade" performed by Duncan Laurence.
-        It would have been the fifth time that the Netherlands hosted the contest, the last time having been the 1980 contest. It was due to be held at Rotterdam Ahoy.
-        The contest was cancelled on 18 March 2020, due to the COVID-19 pandemic. It is the first time in the contest's 64-year history that it has been cancelled.
-    </p>
-     <img class="mx-auto d-block" src="../assets/Rotterdam/Rotterdam.svg" width = "700px" height="300px"/>
-    </div>
-    </div>
-     <div class="row justify-content-center">
-    <h2 class="titles">Rotterdam 2020/2021</h2>
-    </div>
-    <div class="row">
-    <div class="col"  md="6" offset-md="3" >
-     <p>
-      It was scheduled to consist of two semifinals on 12 and 14 May, and a final on 16 May 2020.
-      Forty-one countries would have participated in the contest; Bulgaria and Ukraine would have returned after their absences from the 2019 contest, while Hungary and Montenegro had confirmed their non-participation after taking part in the previous edition. 
-      All forty-one competing artists and songs were confirmed by the relevant broadcasters by early March 2020.
-     </p>
-     <p>
-      Following its cancellation, the European Broadcasting Union began discussions of potential carryovers for the 2021 contest, such as host city and participating artists, with various parties.
-      In place of the cancelled contest, the EBU and its Dutch members NPO, NOS and AVROTROS organised a replacement show, Eurovision: Europe Shine a Light, to showcase the selected entries in place of the Grand Final on 16 May.
-      Rotterdam would later remain as the host city of the next year's contest.
-    </p>
-     <img class="mx-auto d-block" src="../assets/Rotterdam/shine.jpg" width = "700px"/>
-    </div>
+      <div class="col" md="6" offset-md="3">
+        <img class=" d-block" src="../assets/Rotterdam/Rotterdam.svg" width="700px" height="350px" />
+      </div>
+      <div class="col left" md="6" offset-md="3">
+        <p class="par1">
+          El Festival de Eurovisión de 2020 iba a ser la edicion número 65 del festival.
+          Esta edición iba a ser celbrada en la ciudad de Rotterdam, Paises Bajos, país de origen
+          de el ganador del la edición de 2019 en Tel Aviv, Israel, Duncan Lurence con su canción "Arcade".
+        </p>
+        <p>
+          Habría sido la quinta vez que Paises Bajos hubiera organizado el festival, cosa que no sucedia desde 1980.
+          Iba a celebrarse en el Rotterdam Ahoy.
+          El concurso fue cancelado el 18 de marzo de 2020, debido a la pandemia mundial COVID-19. 
+          Es la primera vez en la historia de Eurovisión que el concurso ha tenido que ser cancelado.
+        </p>
+      </div>
+
     </div>
     <div class="row justify-content-center">
-    <h2 class="titles">Rotterdam, The Netherlands</h2>
+      <h2 class="titles display-5">Rotterdam 2020/2021</h2>
     </div>
     <div class="row">
-    <div class="col"  md="6" offset-md="3" >
-     <p>
-      Rotterdam is a city and municipality in the Netherlands. It is in the province of South Holland, at the mouth of the Nieuwe Maas channel leading into the Rhine–Meuse–Scheldt delta at the North Sea.
-       Its history goes back to 1270, when a dam was constructed in the Rotte. In 1340, Rotterdam was granted city rights by the Count of Holland.
-       The Rotterdam–The Hague metropolitan area, with a population of approximately 2.7 million, is the 13th-largest in the European Union and the most populous in the country.
-     </p>
-     <p>
-    The Rhine, Meuse and Scheldt give waterway access into the heart of Western Europe, including the highly industrialized Ruhr. 
-    The extensive distribution system including rail, roads, and waterways have earned Rotterdam the nicknames "Gateway to Europe" and "Gateway to the World".
-    </p>
-     <img class="mx-auto d-block" src="../assets/Rotterdam/rotterdam.jpg" width = "700px"/>
+      <div class="col" md="6" offset-md="3">
+        <p>
+          Estaba organizado para ser llevado acabo en dos semifinales, una el 12 y otra el 14 de mayo, y después la gran final el 16 de mayo de 2020.
+          La lista de paises participantes se extendia hata 41, Bulgaria y Ucrania volverían despues de no participar en 
+          la edición de 2019, mientras Hungría y Montenegro habían confirmado que no participarían en esta edición.
+          Todos los artistas y canciones fueron confirmados a principios de marzo de 2020.
+        </p>
+        <p>
+          En lugar de la edición cancelada, la EBU y sus miembros neerlandeses NPO, NOS y AVROTROS organizaron un espectáculo
+          llamado Eurovision: Europe Shine a Light, para mostrar a los paises selecionados para la gran final el 16 de mayo.
+          Rotterdam seguirá siendo la ciudad hospedadora para el festival del año que viene.
+        </p>
+        <img class="mx-auto d-block img-fluid" src="../assets/Rotterdam/shine.jpg" width="700px" />
+      </div>
     </div>
+    <div class="row justify-content-center">
+      <h2 class="titles display-5">Rotterdam, Paises Bajos</h2>
+    </div>
+    <div class="row">
+      <div class="col" md="6" offset-md="3">
+        <p>
+          Es una ciudad neerlandesa situada al oeste del país, en la provincia de Holanda Meridional, y puerto sobre el
+          río Mosa, cerca de La Haya. Situada a 30 km del mar, tiene una población de 634.660 habitantes. Es la
+          segunda ciudad más poblada del país y el área metropolitana de Róterdam alcanza los 2,82 millones de personas.
+        </p>
+        <p>
+          Los rios Rhine, Meuse y Scheldt dan acceso al corazón del oeste de Europa, incluida la altamente
+          insutrializada
+          región de Ruhr.
+        </p>
+        <p>
+          Holanda Meridional, la provincia en la que se encuentra Rotterdam, es la región más multicultural de los
+          Países Bajos. La ciudad es el hogar de 174 nacionalidades, y todos los países participantes del Festival de
+          Eurovisión están representados en la población local.
+        </p>
+        <img class="mx-auto d-block img-fluid" src="../assets/Rotterdam/rotterdam.jpg" width="700px" />
+      </div>
     </div>
   </div>
 </template>
+<style>
+  .left {
+    padding-left: 2em !important;
+  }
+
+  .right {
+    margin-right: 1em !important;
+  }
+</style>

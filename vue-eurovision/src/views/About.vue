@@ -1,70 +1,99 @@
 <template>
 
-<div class="container">
-  <div class="header">
-  <img class="" src="../assets/About/hero2.jpg" width = "100%" />
+  <div class="container">
+    <div class="header">
+      <h1 class="title display-4">Eurovision Song Contest</h1>
+    </div>
+    <div class="row">
+      <div class="col" md="6" offset-md="3">
+        <p class="par1">La primera edición del concurso se celebró el 24 de mayo de 1956, donde solo participaron siete paises. Con una
+          orquesta en vivo, la norma en esos primeros años, y canciones sencilla que sonaban en la radio, el
+          concurso se convirtió en una verdadera tradición europea.
+          <br>Lys Assia fue la primera ganadora del Festival de Eurovisión en 1956
+        </p>
+        <img class="mx-auto d-block img-fluid" src="../assets/About/LysAssia.jpg" width="700px" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <h2 class="titles display-5">Votos por favor</h2>
+    </div>
+    <div class="row">
+      <div class="col" md="6" offset-md="3">
+        <p class="textR">
+          Los sistemas de votación utilizados en el concurso han cambiado a lo largo de los años. El sistema moderno ha
+          estado en funcionamiento desde 1975. Los votantes conceden puntos del 1 al 8, luego 10 y
+          finalmente 12 a canciones de otros países, y el favorito recibe los ahora famosos puntos de douze .
+        </p>
+        <p>
+          Históricamente, el los votos que daba cada país era decidido por un jurado interno, pero en 1997 cinco países
+          experimentaron con la televotación, dando la oportunidad al público de esos paises de votar
+          por sus canciones favoritas. El experimento fue un éxito y desde 1998 se animó a todos los países a
+          utilizar la televotación siempre que sea posible
+        </p>
+        <img class="mx-auto d-block img-fluid" src="../assets/About/votes.png" width="700px" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <h2 class="titles display-5">Expandiendo con Semifinales</h2>
+    </div>
+    <div class="row">
+      <div class="col" md="6" offset-md="3">
+        <p>
+          El final de la Guerra Fría, a principios de la década de 1990, condujo a un aumento repentino en el número,
+          con
+          muchos países del Bloque del Este haciendo cola para entrar en competición por primera vez. Más y más paises
+          haciendoseguido uniendo desde ese momento
+          hasta nuestro días.
+        </p>
+        <p>
+          Por esta razón, en 2004, la EBU introdujo el formato de
+          semifinales, que se convirtió en dos semifinales en el Festival de Eurovisión en 2008. Ahora todos los
+          países, excepto los del 'Big Five': Francia, Alemania, Italia, España y Reino Unido, junto con el país
+          anfitrión, deben estar entre los 10 primeros puestos de una semifinal para poder clasificarse para la gran
+          final.
+        </p>
+        <img class="mx-auto d-block img-fluid" src="../assets/About/semifinals.jpg" width="700px" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <h2 class="titles display-5">60 años y más</h2>
+    </div>
+    <div class="row">
+      <div class="col" md="6" offset-md="3">
+        <p>
+          En 2015, el Festival de la Canción de Eurovisión celebró su 60 aniversario. La BBC organizó un gran
+          espectáculo en Londres, con más de una docena de ex participantes. Y para honrar el compromiso del país
+          con el Festival de Eurovisión durante más de 30 años, los organizadores permitieron que Australia
+          participará por primera vez.
+        </p>
+        <img class="mx-auto d-block img-fluid" src="../assets/About/australia2015.jpg" width="700px" />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <h2 class="titles display-5">Datos</h2>
+    </div>
+    <div class="row">
+      <div class="col" md="6" offset-md="3">
+
+        <p>En 2015, el Festival de la Canción de Eurovisión, fue reconocido por el Libro Guinness de los Récords como
+          la Competición Anual de Música de TV de mayor duración.
+        </p>
+        <p>
+          ABBA es el ganador más exitoso del Festival de Eurovisión. La banda de pop sueca ganó el concurso en 1974
+          y ha disfrutado de un exito arrollador desde entonces, a pesar de haberse separado en 1983.
+        </p>
+        <p>
+          La canción de Eurovisión más versionada es <i>Nel Blu Di Pinto Di Blu</i> de <b>Domenico Mudugno</b>, tambien
+          conocida como <i>Volare</i>. La canción ha sido versionada por estrellas como Dean Martin, Cliff Richard,
+          David Bowie y muchos mas.
+        </p>
+        <img class="mx-auto d-block img-fluid" src="../assets/About/abba.jpg" width="700px" />
+      </div>
+    </div>
   </div>
-    <div class="row">
-    <div class="col"  md="6" offset-md="3" >  
-    <p>The first Contest was held on 24 May 1956, when seven nations participated. 
-      With a live orchestra, the norm in the early years, and simple sing-along songs on every radio station, the Contest grew into a true pan-European tradition.
-      <br>Lys Assia was the first contestant to ever win Eurovision Song Constest in 1956
-    </p>
-    <img class="mx-auto d-block" src="../assets/About/LysAssia.jpg" width = "700px"/>
-    </div>
-    </div>
-   <div class="row justify-content-center">
-    <h2 class="titles">Votes please</h2>
-    </div>
-    <div class="row">
-    <div class="col"  md="6" offset-md="3" >
-     <p>
-      The voting systems used in the Contest have changed throughout the years. The modern system has been in place since 1975. 
-      Voters award a set of points from 1 to 8, then 10 and finally 12 to songs from other countries — with the favourite being awarded the now famous douze points.  
-      Historically, a country's set of votes was decided by an internal jury, but in 1997 five countries experimented with televoting, giving members of the public in those countries the opportunity to vote en masse for their favourite songs.
-      The experiment was a success and from 1998 all countries were encouraged to use televoting wherever possible.
-    </p>
-     <img class="mx-auto d-block" src="../assets/About/votes.png" width = "700px"/>
-    </div>
-    </div>
-    <div class="row justify-content-center">
-    <h2 class="titles">Expanding with Semi-Finals</h2>
-    </div>
-    <div class="row">
-    <div class="col"  md="6" offset-md="3" >
-    <p>
-      The end of the Cold War in the early 1990s led to a sudden increase in numbers, with many former Eastern Bloc countries queuing up to compete for the first time.
-      This process has continued to this day with more and more countries joining. For this reason, in 2004 the Semi-Final format was introduced by the EBU which turned into two Semi-Finals for the Eurovision Song Contest in 2008. 
-      Now all countries, except the 'Big Five' – France, Germany, Italy, Spain and the United Kingdom – together with the host country, must be in a Semi-Final top-10 to qualify for the Final.
-    </p>
-    <img class="mx-auto d-block" src="../assets/About/semifinals.jpg" width = "700px"/>
-     </div>
-    </div>
-    <div class="row justify-content-center">
-    <h2 class="titles">60 years and counting</h2>
-    </div>
-    <div class="row">
-    <div class="col"  md="6" offset-md="3" >
-    <p>
-      In 2015, the Eurovision Song Contest celebrated its 60th anniversary. The BBC hosted a grand anniversary show in London, featuring over a dozen former participants.
-       And to honour the country's Eurovision Song Contest commitment for over 30 years, the organisers admitted Australia to participate for the first time ever.
-    </p>
-      <img class="mx-auto d-block" src="../assets/About/australia2015.jpg" width = "700px"/>
-     </div>
-    </div>
-     <div class="row justify-content-center">
-    <h2 class="titles">Facts</h2>
-    </div>
-    <div class="row">
-    <div class="col"  md="6" offset-md="3" >
-    <p>In 2015, the Eurovision Song Contest was recognised by the Guinness Book of World Records as the Longest Running Annual TV Music Competition.
-
-      <br><br>ABBA is the most successful Eurovision Song Contest winner.The Swedish pop band won the contest in 1974 and has enjoyed phenomenal success ever since, despite officially splitting up in 1983.
-
-      <br><br>The most covered Eurovision Song Contest song is Domenico Mudugno‘s Nel Blu Di Pinto Di Blu, also known as Volare. The song has been covered by famous stars such as Dean Martin, Cliff Richard, David Bowie and many more..
-    </p>
-    <img class="mx-auto d-block" src="../assets/About/abba.jpg" width = "700px"/>
-     </div>
-    </div>
-    </div>
 </template>
+<style>
+  .title {
+    color: #1A237E;
+  }
+</style>

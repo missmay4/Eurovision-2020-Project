@@ -42,7 +42,7 @@
           <router-link class="nav-link" to="/favorites">Favoritos</router-link>
         </li>
       </ul>
-      <span class="navbar-text"
+      <span class="navbar-text mr-2"
         ><a href="https://github.com/missmay4/Eurovision-2020-Project">
           <i class="fa fa-github fa-lg" aria-hidden="true"></i>
         </a>

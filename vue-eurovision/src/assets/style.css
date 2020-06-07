@@ -21,7 +21,7 @@ body {
   padding-left: 10px;
 }
 
-*: focus {
+*:focus {
   outline-color: var(--c-accent);
 }
 
@@ -196,21 +196,6 @@ table {
   width: 100%;
 }
 
-/* 
-td,
-th {
-  border: 1px solid #000000;
-  text-align: left;
-  padding: 8px;
-}
-
-th {
-  background-color: #7590da;
-} */
-.titles {
+.title {
   color: #224488;
-  padding-top: 1em;
-}
-.par1{
-  padding-top: 5%;
 }

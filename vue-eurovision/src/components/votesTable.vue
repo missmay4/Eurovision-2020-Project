@@ -52,7 +52,4 @@ export default {
 .nombre {
   color: #273b75;
 }
-.title {
-  color: #224488;
-}
 </style>

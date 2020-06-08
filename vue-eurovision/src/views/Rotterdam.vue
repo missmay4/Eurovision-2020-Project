@@ -6,10 +6,8 @@
     <div class="row justify-content-center">
       <div class="col" md="6" offset-md="3">
         <img
-          class="d-block mx-auto"
-          src="../assets/Rotterdam/Rotterdam.svg"
-          width="700px"
-          height="350px"
+          class="d-block mx-auto mb-3"
+          src="../assets/Rotterdam/logo2020.jpg"
         />
         <p class="par1">
           El Festival de Eurovisión de 2020 iba a ser la edicion número 65 del
@@ -78,7 +76,7 @@
         </p>
         <img
           class="mx-auto d-block img-fluid"
-          src="../assets/Rotterdam/rotterdam.jpg"
+          src="../assets/Rotterdam/rotterdamAhoy.jpeg"
           width="700px"
         />
       </div>

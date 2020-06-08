@@ -1,6 +1,6 @@
 <template>
-  <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-    <div class="card" style="width: 18rem;">
+  <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+    <div class="card">
       <div class="card-header bg-danger text-white">
         {{ usuario.name }}
       </div>

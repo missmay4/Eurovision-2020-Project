@@ -161,7 +161,7 @@ export default {
           });
 
           //console.log(response.data);
-          alert(this.username + " you have saved your favorites");
+          alert(this.username + " has guardado tus favoritos");
         })
         .catch((error) => {
           // handle error

@@ -7,27 +7,38 @@
       votado, tanto en Semifinales como en la Final.
     </p>
     <div class="row">
-      <table class="table col-sm-2 col-md-6 col-lg-6">
+      <div class="col-6">
+        <ul class="list-group">
+          <winnersTable v-for="name in names" :name="name" v-bind:key="name" />
+        </ul>
+      </div>
+      <div class="col-6">
+        <ul class="list-group">
+          <winnersTable2
+            v-for="vote in totalVotes"
+            :vote="vote"
+            v-bind:key="vote"
+          />
+        </ul>
+      </div>
+
+      <!-- <table class="table col-sm-2 col-md-6 col-lg-6">
         <thead>
           <tr>
             <th scope="col" class="nombre">País</th>
-            <!-- <th scope="col">Total votes</th> -->
           </tr>
         </thead>
         <tbody>
           <winnersTable v-for="name in names" :name="name" v-bind:key="name" />
-          <!--<winnersTable v-for=" vote in totalVotes" :vote="vote" /> -->
         </tbody>
       </table>
       <table class="table col-sm-6 col-md-6 col-lg-6">
         <thead>
           <tr>
-            <!-- <th scope="col" class="nombre">Country</th> -->
             <th scope="col">Nº de votos</th>
           </tr>
         </thead>
         <tbody>
-          <!-- <winnersTable v-for=" code in codes" :code="code" /> -->
           <winnersTable2
             v-for="vote in totalVotes"
             :vote="vote"
@@ -35,6 +46,7 @@
           />
         </tbody>
       </table>
+    </div> -->
     </div>
   </div>
 </template>
@@ -55,22 +67,17 @@ export default {
     };
   },
   mounted() {
-    axios.get("http://localhost:8080/user/").then((response) => {
+    axios.get("http://localhost:8080/votes/").then((response) => {
       this.usuarios = response.data;
       let json = response.data;
-      //console.log(json);
-      let totalVotos = [];
+      console.log(json);
+      let totalPaises = [];
       json.forEach((element) => {
-        let votos = element.votos;
-        //console.log(votos);
-        votos.forEach((el) => {
-          let participant = el.participant.country.name;
-          //console.log(participant);
-          totalVotos.push(participant);
-        });
+        let participant = element.participant.country.name;
+        totalPaises.push(participant);
       });
 
-      //console.log(totalVotos);
+      console.log(totalPaises);
 
       function repeated(arr) {
         var a = [],
@@ -91,14 +98,7 @@ export default {
         return [a, b];
       }
 
-      /* function asc(arr) {
-        arr.sort(function(a, b) {
-          return b - a;
-        });
-        return arr;
-      } */
-
-      var result = repeated(totalVotos);
+      var result = repeated(totalPaises);
       var names = result[0];
       var votes = result[1];
       console.log(result);

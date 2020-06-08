@@ -1,38 +1,16 @@
 <template>
-  <tr>
-    <th scope="row">
-      <!-- <img class="flags" :src="loadImage('EuroFlags/Euro' + code + '.png')" :alt="'Euro' + code" /> -->
-      <p class="nombrePais">{{name}}</p>
-    </th>
-    <!-- <th scope="row">{{vote}}</th> -->
-    <!-- Numero de veces que se repite el voto -->
-  </tr>
+  <li class="list-group-item list-group-item-action list-group-item-primary">
+    {{ name }}
+  </li>
 </template>
 
 <script>
 export default {
   name: "VotosFinales",
   props: {
-    /*usuario: Object,
-    participant: Object, */
-    name: String
-    //vote: Number
+    name: String,
   },
-  methods: {
-    loadImage(imageName) {
-      return require("../assets/" + imageName);
-    }
-  }
 };
 </script>
 
-<style>
-.nombrePais {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-th {
-  background-color: #ffffff;
-}
-</style>
+<style scoped></style>

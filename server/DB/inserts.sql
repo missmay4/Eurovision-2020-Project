@@ -4,90 +4,90 @@ insert into country (code, name) values
 	('AM', 'Armenia'),
 	('AU', 'Australia'),
 	('AT', 'Austria'),
-	('AZ', 'Azerbaijan'),
-	('BY', 'Belarus'),
-	('BE', 'Belgium'),
+	('AZ', 'Azerbaiyán'),
+	('BY', 'Bielorrusia'),
+	('BE', 'Bélgica'),
 	('BG', 'Bulgaria'),
-	('HR', 'Croatia'),
-	('CY', 'Cyprus'),
-	('CZ', 'Czech Republic'),
-	('DK', 'Denmark'),
+	('HR', 'Croacia'),
+	('CY', 'Chipre'),
+	('CZ', 'República Checa'),
+	('DK', 'Dinamarca'),
 	('EE', 'Estonia'),
-	('FI', 'Finland'),
-	('FR', 'France'),
+	('FI', 'Finlandia'),
+	('FR', 'Francia'),
 	('GE', 'Georgia'),
-	('DE', 'Germany'),
-	('GR', 'Greece'),
-	('HU', 'Hungary'),
-	('IS', 'Iceland'),
-	('IE', 'Ireland'),
+	('DE', 'Alemania'),
+	('GR', 'Grecia'),
+	('HU', 'Hungría'),
+	('IS', 'Islandia'),
+	('IE', 'Irlanda'),
 	('IL', 'Israel'),
-	('IT', 'Italy'),
-	('LV', 'Latvia'),
-	('LT', 'Lithuania'),
+	('IT', 'Italia'),
+	('LV', 'Letonia'),
+	('LT', 'Lituania'),
 	('MK', 'Macedonia'),
 	('MT', 'Malta'),
-	('MD', 'Moldova'),
+	('MD', 'Moldavia'),
 	('ME', 'Montenegro'),
-	('NL', 'Netherlands'),
-	('NO', 'Norway'),
-	('PL', 'Poland'),
+	('NL', 'Países Bajos'),
+	('NO', 'Noruega'),
+	('PL', 'Polonia'),
 	('PT', 'Portugal'),
-	('RO', 'Romania'),
-	('RU', 'Russia'),
+	('RO', 'Rumania'),
+	('RU', 'Rusia'),
 	('SM', 'San Marino'),
 	('RS', 'Serbia'),
-	('SI', 'Slovenia'),
-	('ES', 'Spain'),
-	('SE', 'Sweden'),
-	('CH', 'Switzerland'),
-	('UA', 'Ukraine'),
-	('GB', 'United Kingdom')
+	('SI', 'Eslovenia'),
+	('ES', 'España'),
+	('SE', 'Suecia'),
+	('CH', 'Suiza'),
+	('UA', 'Ucrania'),
+	('GB', 'Reino Unido')
 
 -- Participants Insert 
 
 insert into participant (country_id, name, song, year, song_link, language) values
-	((select id from country where name = 'Albania'), 'Arilena Ara', 'Fall From The Sky', 2020, 'https://youtu.be/p-E-kIFPrsY', 'English'),
-	((select id from country where name = 'Germany'), 'Ben Dolic', 'Violent Thing', 2020, 'https://youtu.be/hAobDQ9GbT4', 'English'),
-	((select id from country where name = 'Armenia'), '	Athena Manoukian', 'Chains on You', 2020, 'https://youtu.be/XpQHGMM8c5U', 'English'),
-	((select id from country where name = 'Australia'), 'Montaigne', 'Don’t Break Me', 2020, 'https://youtu.be/gr-wWxu4974', 'English'),
-	((select id from country where name = 'Austria'), 'Vicent Bueno', 'Alive', 2020, 'https://youtu.be/cOuiTJlBC50', 'English'),
-	((select id from country where name = 'Azerbaijan'), 'Efendi', 'Cleopatra', 2020, 'https://youtu.be/I0VzBCvO1Wk', 'English & Japanese'),
-	((select id from country where name = 'Belgium'), 'Hooverphonic', 'Release Me', 2020, 'https://youtu.be/lAqjksxc4iA', 'English'),
-	((select id from country where name = 'Belarus'), 'VAL', 'Da Vidna', 2020, 'https://youtu.be/F0wfxz5zq04', 'Belarusian'),
-	((select id from country where name = 'Bulgaria'), 'Victoria Georgieva', 'Tears Getting Sober', 2020, 'https://youtu.be/V_hgYnwZR8I', 'English'),
-	((select id from country where name = 'Cyprus'), 'Sandro Nicolas', 'Running', 2020, 'https://youtu.be/Jl_qEw_4OK0', 'English'),
-	((select id from country where name = 'Croatia'), 'Damir Kedžo', 'Divlji vjetre', 2020, 'https://youtu.be/2rOwScdxjJU', 'Croatian'),
-	((select id from country where name = 'Denmark'), 'Ben & Tan', 'YES', 2020, 'https://youtu.be/XQ5tMhQIp1E', 'English'),
-	((select id from country where name = 'Slovenia'), 'Ana Soklič', 'Voda', 2020, 'https://youtu.be/weLeotNwexg', 'Slovene'),
-	((select id from country where name = 'Spain'), 'Blas Cantó', 'Universo', 2020, 'https://youtu.be/zuDdex1st-Y', 'Spanish'),
-	((select id from country where name = 'Estonia'), 'Uku Suviste', 'What Love Is', 2020, 'https://youtu.be/3EIQ6U039ms', 'English'),
-	((select id from country where name = 'Finland'), '	Aksel Kankaanranta', 'Looking Back', 2020, 'https://youtu.be/EgONBKFQpxE', 'English'),
-	((select id from country where name = 'France'), 'Tom Leeb', 'Mon Alliée (The Best in Me)', 2020, 'https://youtu.be/J5SOdhXjYko', 'French & English'),
-	((select id from country where name = 'Georgia'), 'Tornike Kipiani', 'Take Me As I Am', 2020, 'https://youtu.be/LjNK4Xywjc4', 'English, Italian, Spanish, Frecnh & German'),
-	((select id from country where name = 'Greece'), 'Stefania Liberakakis', 'Superg!rl', 2020, 'https://youtu.be/dJxCINWp_j0', 'English'),
-	((select id from country where name = 'Ireland'), 'Lesley Roy', 'Story Of My Life', 2020, 'https://youtu.be/HLgE0Ayl5Hc', 'English'),
-	((select id from country where name = 'Iceland'), 'Daði & Gagnamagnið', 'Think About Things', 2020, 'https://youtu.be/1HU7ocv3S2o', 'English'),
-	((select id from country where name = 'Israel'), 'Eden Alene', 'Feker Libi', 2020, 'https://youtu.be/YjzyZZ-oidc', 'English, Amharic, Hebrew, Arabic & African constructed language'),
-	((select id from country where name = 'Italy'), 'Diodato', 'Fai Rumore', 2020, 'https://youtu.be/TA57rugucwk', 'Italian'),
-	((select id from country where name = 'Latvia'), 'Samanta Tīna', 'Still Breathing', 2020, 'https://youtu.be/ELr6U2fOrnE', 'English'),
-	((select id from country where name = 'Lithuania'), 'The Roop', 'On Fire', 2020, 'https://youtu.be/FxPm-Wz8qpY', 'English'),
-	((select id from country where name = 'Macedonia'), 'Vasil Garvanliev', 'You', 2020, 'https://youtu.be/xPZumQQExQc', 'English'),
-	((select id from country where name = 'Malta'), 'Destiny Chukunyere', 'All Of My Love', 2020, 'https://youtu.be/CFCn_8oViRw', 'English'),
-	((select id from country where name = 'Moldova'), 'Natalia Gordienco', 'Prison', 2020, 'https://youtu.be/RnD1ApDo5_k', 'English'),
-	((select id from country where name = 'Norway'), 'Ulrikke Brandstorp', 'Attention', 2020, 'https://youtu.be/o9atJbnqhJU', 'English'),
-	((select id from country where name = 'Netherlands'), 'Jeangu Macrooy', 'Grow', 2020, 'https://youtu.be/sMcxWB90TTY', 'English'),
-	((select id from country where name = 'Poland'), 'Alicja Szemplińska', 'Empires', 2020, 'https://youtu.be/s_Y7mMka4SQ', 'English'),
-	((select id from country where name = 'Portugal'), 'Elisa Silva', 'Medo de Sentir', 2020, 'https://youtu.be/eIZ48w4epng', 'Portuguese'),
-	((select id from country where name = 'United Kingdom'), 'James Newman', 'My Last Breath', 2020, 'https://youtu.be/6iS-lV909T4', 'English'),
-	((select id from country where name = 'Czech Republic'), 'Benny Cristo', 'Kemama', 2020, 'https://youtu.be/wROqCHLnbko', 'English'),
-	((select id from country where name = 'Romania'), 'Roxen', 'Alcohol You', 2020, 'https://youtu.be/TmqSU3v_Mtw', 'English'),
-	((select id from country where name = 'Russia'), 'Little Big', 'UNO', 2020, 'https://youtu.be/L_dWvTCdDQ4', 'English & Spanish'),
+	((select id from country where name = 'Albania'), 'Arilena Ara', 'Fall From The Sky', 2020, 'https://youtu.be/vXpCWFIY6YE', 'Inglés'),
+	((select id from country where name = 'Alemania'), 'Ben Dolic', 'Violent Thing', 2020, 'https://youtu.be/hAobDQ9GbT4', 'Inglés'),
+	((select id from country where name = 'Armenia'), '	Athena Manoukian', 'Chains on You', 2020, 'https://youtu.be/XpQHGMM8c5U', 'Inglés'),
+	((select id from country where name = 'Australia'), 'Montaigne', 'Don’t Break Me', 2020, 'https://youtu.be/gr-wWxu4974', 'Inglés'),
+	((select id from country where name = 'Austria'), 'Vicent Bueno', 'Alive', 2020, 'https://youtu.be/cOuiTJlBC50', 'Inglés'),
+	((select id from country where name = 'Azerbaiyán'), 'Efendi', 'Cleopatra', 2020, 'https://youtu.be/I0VzBCvO1Wk', 'Inglés y Japonés'),
+	((select id from country where name = 'Bélgica'), 'Hooverphonic', 'Release Me', 2020, 'https://youtu.be/lAqjksxc4iA', 'Inglés'),
+	((select id from country where name = 'Bielorrusia'), 'VAL', 'Da Vidna', 2020, 'https://youtu.be/F0wfxz5zq04', 'Bielorruso'),
+	((select id from country where name = 'Bulgaria'), 'Victoria Georgieva', 'Tears Getting Sober', 2020, 'https://youtu.be/V_hgYnwZR8I', 'Inglés'),
+	((select id from country where name = 'Chipre'), 'Sandro Nicolas', 'Running', 2020, 'https://youtu.be/Jl_qEw_4OK0', 'Inglés'),
+	((select id from country where name = 'Croacia'), 'Damir Kedžo', 'Divlji vjetre', 2020, 'https://youtu.be/2rOwScdxjJU', 'Croata'),
+	((select id from country where name = 'Dinamarca'), 'Ben & Tan', 'YES', 2020, 'https://youtu.be/XQ5tMhQIp1E', 'Inglés'),
+	((select id from country where name = 'Eslovenia'), 'Ana Soklič', 'Voda', 2020, 'https://youtu.be/weLeotNwexg', 'Esloveno'),
+	((select id from country where name = 'España'), 'Blas Cantó', 'Universo', 2020, 'https://youtu.be/zuDdex1st-Y', 'Español'),
+	((select id from country where name = 'Estonia'), 'Uku Suviste', 'What Love Is', 2020, 'https://youtu.be/3EIQ6U039ms', 'Inglés'),
+	((select id from country where name = 'Finlandia'), 'Aksel Kankaanranta', 'Looking Back', 2020, 'https://youtu.be/EgONBKFQpxE', 'Inglés'),
+	((select id from country where name = 'Francia'), 'Tom Leeb', 'Mon Alliée (The Best in Me)', 2020, 'https://youtu.be/J5SOdhXjYko', 'Francés e Inglés'),
+	((select id from country where name = 'Georgia'), 'Tornike Kipiani', 'Take Me As I Am', 2020, 'https://youtu.be/LjNK4Xywjc4', 'Inglés, Italiano, Español, Francés & Alemán'),
+	((select id from country where name = 'Grecia'), 'Stefania Liberakakis', 'Superg!rl', 2020, 'https://youtu.be/dJxCINWp_j0', 'Inglés'),
+	((select id from country where name = 'Irlanda'), 'Lesley Roy', 'Story Of My Life', 2020, 'https://youtu.be/HLgE0Ayl5Hc', 'Inglés'),
+	((select id from country where name = 'Islandia'), 'Daði & Gagnamagnið', 'Think About Things', 2020, 'https://youtu.be/1HU7ocv3S2o', 'Inglés'),
+	((select id from country where name = 'Israel'), 'Eden Alene', 'Feker Libi', 2020, 'https://youtu.be/YjzyZZ-oidc', 'Inglés, Amhárico, Hebreo, Árabe & Lengua construida africana'),
+	((select id from country where name = 'Italia'), 'Diodato', 'Fai Rumore', 2020, 'https://youtu.be/TA57rugucwk', 'Italiano'),
+	((select id from country where name = 'Letonia'), 'Samanta Tīna', 'Still Breathing', 2020, 'https://youtu.be/ELr6U2fOrnE', 'Inglés'),
+	((select id from country where name = 'Lituania'), 'The Roop', 'On Fire', 2020, 'https://youtu.be/FxPm-Wz8qpY', 'Inglés'),
+	((select id from country where name = 'Macedonia'), 'Vasil Garvanliev', 'You', 2020, 'https://youtu.be/xPZumQQExQc', 'Inglés'),
+	((select id from country where name = 'Malta'), 'Destiny Chukunyere', 'All Of My Love', 2020, 'https://youtu.be/CFCn_8oViRw', 'Inglés'),
+	((select id from country where name = 'Moldavia'), 'Natalia Gordienco', 'Prison', 2020, 'https://youtu.be/RnD1ApDo5_k', 'Inglés'),
+	((select id from country where name = 'Noruega'), 'Ulrikke Brandstorp', 'Attention', 2020, 'https://youtu.be/o9atJbnqhJU', 'Inglés'),
+	((select id from country where name = 'Países Bajos'), 'Jeangu Macrooy', 'Grow', 2020, 'https://youtu.be/sMcxWB90TTY', 'Inglés'),
+	((select id from country where name = 'Polonia'), 'Alicja Szemplińska', 'Empires', 2020, 'https://youtu.be/s_Y7mMka4SQ', 'Inglés'),
+	((select id from country where name = 'Portugal'), 'Elisa Silva', 'Medo de Sentir', 2020, 'https://youtu.be/eIZ48w4epng', 'Portugués'),
+	((select id from country where name = 'Reino Unido'), 'James Newman', 'My Last Breath', 2020, 'https://youtu.be/6iS-lV909T4', 'Inglés'),
+	((select id from country where name = 'República Checa'), 'Benny Cristo', 'Kemama', 2020, 'https://youtu.be/wROqCHLnbko', 'Inglés'),
+	((select id from country where name = 'Rumania'), 'Roxen', 'Alcohol You', 2020, 'https://youtu.be/TmqSU3v_Mtw', 'Inglés'),
+	((select id from country where name = 'Rusia'), 'Little Big', 'UNO', 2020, 'https://youtu.be/L_dWvTCdDQ4', 'Inglés y Español'),
 	((select id from country where name = 'San Marino'), 'Senhit', 'Freaky!', 2020, 'https://youtu.be/c6ZNo_hVA6E', 'English'),	
-	((select id from country where name = 'Serbia'), 'Hurricane', 'Hasta La Vista', 2020, 'https://youtu.be/7fqZevYLUMs', 'Serbian, Spanish & English'),
-	((select id from country where name = 'Sweden'), 'The Mamas', 'Move', 2020, 'https://youtu.be/7EpSBDPlZn4', 'English'),
-	((select id from country where name = 'Switzerland'), 'Gjons Tears', 'Répondez-mo', 2020, 'https://youtu.be/O9GAfFHZE-E', 'French'),
-	((select id from country where name = 'Ukraine'), 'Go_A', 'Solovey', 2020, 'https://youtu.be/zNetXPSld50', 'Ukrainian')
+	((select id from country where name = 'Serbia'), 'Hurricane', 'Hasta La Vista', 2020, 'https://youtu.be/7fqZevYLUMs', 'Serbio, Español e Inglés'),
+	((select id from country where name = 'Suecia'), 'The Mamas', 'Move', 2020, 'https://youtu.be/7EpSBDPlZn4', 'Inglés'),
+	((select id from country where name = 'Suiza'), 'Gjons Tears', 'Répondez-mo', 2020, 'https://youtu.be/O9GAfFHZE-E', 'Francés'),
+	((select id from country where name = 'Ucrania'), 'Go_A', 'Solovey', 2020, 'https://youtu.be/zNetXPSld50', 'Ucraniano')
 
 -- Gala Insert
 insert into gala (type, date) values
@@ -146,7 +146,7 @@ insert into galaparticipant (gala_id, participant_id, performanceorder) values
 	(3, 23, 24), -- Italy
 	(3, 33, 9) -- United Kingdom
 	
-insert into galaparticipant (gala_id, participant_id, performanceorder) values -- ganadores 1st semifinal
+insert into galaparticipant (gala_id, participant_id, performanceorder) values -- 'ganadores' 1st semifinal
 	(3, 29, 1), -- Norway
 	(3, 39, 6), -- Sweden
 	(3, 25, 5), -- Lithuania
@@ -158,7 +158,7 @@ insert into galaparticipant (gala_id, participant_id, performanceorder) values -
 	(3, 35, 20), -- Romania
 	(3, 10, 19) -- Cyprus
 	
-insert into galaparticipant (gala_id, participant_id, performanceorder) values -- ganadores 2st semifinal 
+insert into galaparticipant (gala_id, participant_id, performanceorder) values -- 'ganadores' 2st semifinal 
 	(3, 34, 18), -- Checz Republique
 	(3, 1, 13), -- Albania
 	(3, 12, 23), -- Denmark
@@ -169,5 +169,3 @@ insert into galaparticipant (gala_id, participant_id, performanceorder) values -
 	(3, 5, 15), -- Austria
 	(3, 3, 25), -- Armenia
 	(3, 37, 16) -- San Marino 
-	
-

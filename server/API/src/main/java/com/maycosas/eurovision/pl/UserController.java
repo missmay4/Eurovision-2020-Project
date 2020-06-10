@@ -27,7 +27,6 @@ public class UserController {
 	@Autowired
 	private VoteService voteService;
 
-	// (origins = "http://localhost:8000")
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/user/")
 	/**
@@ -52,7 +51,6 @@ public class UserController {
 
 	}
 
-	// (origins = "http://localhost:8000")
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/user/")
 	/**
@@ -62,13 +60,7 @@ public class UserController {
 	 */
 	public Object createUser(@RequestParam(value = "name", required = true) String name) {
 		try {
-			return userService.createUser(name); // No tiene en cuenta si el nombre se repite, para que se pueda votar varias veces con el mimso nombre en las diferentes galas
-			/* if (userService.getUserName(name) == null) {
-				return userService.createUser(name);
-			} else {
-				// HTTP 409 - Username already exists
-				return new ResponseEntity<>(HttpStatus.CONFLICT);
-			} */
+			return userService.createUser(name); // No tiene en cuenta si el nombre se repite, para que se pueda votar varias veces con el mismo nombre en las diferentes galas
 		} catch (NoSuchElementException nsee) {
 			// HTTP 404
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

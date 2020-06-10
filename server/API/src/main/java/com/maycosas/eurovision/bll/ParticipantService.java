@@ -15,11 +15,21 @@ public class ParticipantService {
 	@Autowired
 	private ParticipantDao dao;
 
+	/**
+	 * 
+	 * @return all participants data with gala info
+	 * @throws SQLException
+	 */
 	public List<Participant> getAllParticipants() throws SQLException {
 
 		return dao.findAllParticipant();
 	}
 
+	/**
+	 * 
+	 * @return participants data withour gala info
+	 * @throws SQLException
+	 */
 	public List<Participant> getOnlyParticipants() throws SQLException {
 		return dao.findOnlyParticipants();
 	}

@@ -18,7 +18,6 @@ public class VoteController {
 	@Autowired
 	private VoteService voteService;
 
-	// (origins = "http://localhost:8000")
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/votes/")
 	/**

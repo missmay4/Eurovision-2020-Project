@@ -21,32 +21,6 @@
           />
         </ul>
       </div>
-
-      <!-- <table class="table col-sm-2 col-md-6 col-lg-6">
-        <thead>
-          <tr>
-            <th scope="col" class="nombre">País</th>
-          </tr>
-        </thead>
-        <tbody>
-          <winnersTable v-for="name in names" :name="name" v-bind:key="name" />
-        </tbody>
-      </table>
-      <table class="table col-sm-6 col-md-6 col-lg-6">
-        <thead>
-          <tr>
-            <th scope="col">Nº de votos</th>
-          </tr>
-        </thead>
-        <tbody>
-          <winnersTable2
-            v-for="vote in totalVotes"
-            :vote="vote"
-            v-bind:key="vote"
-          />
-        </tbody>
-      </table>
-    </div> -->
     </div>
   </div>
 </template>
@@ -61,7 +35,6 @@ export default {
   data() {
     return {
       usuarios: [],
-      participants: [],
       names: [],
       totalVotes: [],
     };
@@ -70,14 +43,14 @@ export default {
     axios.get("http://localhost:8080/votes/").then((response) => {
       this.usuarios = response.data;
       let json = response.data;
-      console.log(json);
+      // console.log(json);
       let totalPaises = [];
       json.forEach((element) => {
         let participant = element.participant.country.name;
         totalPaises.push(participant);
       });
 
-      console.log(totalPaises);
+      // console.log(totalPaises);
 
       function repeated(arr) {
         var a = [],
@@ -101,9 +74,9 @@ export default {
       var result = repeated(totalPaises);
       var names = result[0];
       var votes = result[1];
-      console.log(result);
-      console.log(names);
-      console.log(votes);
+      // console.log(result);
+      // console.log(names);
+      // console.log(votes);
       this.names = names;
       this.totalVotes = votes;
       //this.totalVotes = result;

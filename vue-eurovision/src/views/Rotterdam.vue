@@ -6,10 +6,11 @@
     <div class="row justify-content-center">
       <div class="col" md="6" offset-md="3">
         <img
-          class="d-block mx-auto mb-3"
-          src="../assets/Rotterdam/logo2020.jpg"
+          class="mx-auto d-block img-fluid mb"
+          src="../assets/Rotterdam/logo2020.jpeg"
+          width="700px"
         />
-        <p class="par1">
+        <p class="par1 mt">
           El Festival de Eurovisión de 2020 iba a ser la edicion número 65 del
           festival. Esta edición iba a ser celebrada en la ciudad de Rotterdam,
           Paises Bajos, país de origen de el ganador del la edición de 2019 en

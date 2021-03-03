@@ -1,5 +1,7 @@
 # Vote! Eurovision 2020 :eu: :netherlands:
 
+[Puedes probar la aplicación aquí](https://vote-eurovision2020.herokuapp.com/)
+
 [Read in English](https://github.com/missmay4/Eurovision-2020-Project/blob/master/README.md)
 
 # Descripción del proyecto: 

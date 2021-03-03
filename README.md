@@ -1,5 +1,7 @@
 # Vote! Eurovision 2020 :eu: :netherlands:
 
+[You can try the app here](https://vote-eurovision2020.herokuapp.com/)
+
 [Leer en español](https://github.com/missmay4/Eurovision-2020-Project/blob/master/README-ES.md)
 
 Hello! This is a personal and final project made for Web Development FP Course in I.E.S Clara del Rey, in which all the data relating to the 65th edition of Eurovision are shown.
